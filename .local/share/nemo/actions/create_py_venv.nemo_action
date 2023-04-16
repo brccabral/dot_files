@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Create Python .venv
+Comment=Create a Python virtual environment in this folder
+Exec=python3 -m venv "%F/.venv"
+Selection=none
+Extensions=dir;
+Icon-Name=python3
+Dependencies=python3;

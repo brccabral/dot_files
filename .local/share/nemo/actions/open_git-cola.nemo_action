@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Open Git-Cola
+Comment=Open Git-Cola in this folder
+Exec=/bin/bash -c 'QT_QPA_PLATFORMTHEME=qt5ct git-cola cola -r "%F"'
+Selection=none
+Extensions=dir;
+Icon-Name=git-cola
+Dependencies=git-cola;

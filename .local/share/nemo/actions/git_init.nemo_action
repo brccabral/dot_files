@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Git Init
+Comment=Initiate a Git Repository
+Exec=git init "%F"
+Selection=none
+Extensions=dir;
+Icon-Name=git-cola
+Dependencies=git;

@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Open VSCode
+Comment=Open VSCode in this folder
+Exec=code "%F"
+Selection=none
+Extensions=dir;
+Icon-Name=com.visualstudio.code
+Dependencies=code;

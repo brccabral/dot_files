@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Open VSCodium
+Comment=Open VSCodium in this folder
+Exec=codium "%F"
+Selection=none
+Extensions=dir;
+Icon-Name=/usr/share/codium/resources/app/resources/linux/code.png
+Dependencies=codium;

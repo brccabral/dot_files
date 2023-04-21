@@ -1,0 +1,90 @@
+{
+	"printf": {
+		"scope": "cpp",
+		"prefix": "printf",
+		"body": "printf(\"$1\\n\"$2);$0",
+		"description": "printf a new line"
+	},
+	"scanf int": {
+		"scope": "cpp",
+		"prefix": "scanfint",
+		"body": "scanf(\"$1%d\", &${2:i});$0",
+		"description": "scanf get int as input"
+	},
+	"std::cout": {
+		"scope": "cpp",
+		"prefix": "cout",
+		"body": "std::cout << $0 << std::endl;",
+		"description": "std::cout << $0 << std::endl;"
+	},
+	"pragma once": {
+		"scope": "cpp",
+		"prefix": "pragmaonce",
+		"body": [
+			"#pragma once",
+			"$0"
+		],
+		"description": "#pragma once"
+	},
+	"#include <>": {
+		"scope": "cpp",
+		"prefix": "include<>",
+		"body": [
+			"#include <$0>",
+		],
+		"description": "#include <>"
+	},
+	"#include \"\"": {
+		"scope": "cpp",
+		"prefix": "include\"\"",
+		"body": [
+			"#include \"$0\"",
+		],
+		"description": "#include \"\""
+	},
+	"#include <iostream>": {
+		"scope": "cpp",
+		"prefix": "includeiostream",
+		"body": [
+			"#include <iostream>",
+			"$0"
+		],
+		"description": "#include <iostream>"
+	},
+	"std::vector": {
+		"scope": "cpp",
+		"prefix": "vector",
+		"body": "std::vector<${1:type}> ${2:vecVar}$0",
+		"description": "std::vector<type> var"
+	},
+	"std::list": {
+		"scope": "cpp",
+		"prefix": "list",
+		"body": "std::list<${1:type}> ${2:listVar}$0",
+		"description": "std::list<type> var"
+	},
+	"std::stack": {
+		"scope": "cpp",
+		"prefix": "stack",
+		"body": "std::stack<${1:type}> ${2:stackVar}$0",
+		"description": "std::stack<type> var"
+	},
+	"std::pair": {
+		"scope": "cpp",
+		"prefix": "pair",
+		"body": "std::pair<${1:type1}, ${2:type2}> ${3:pairVar}$0",
+		"description": "std::pair<type1, type2> var"
+	},
+	"std::map": {
+		"scope": "cpp",
+		"prefix": "map",
+		"body": "std::map<${1:type1}, ${2:type2}> ${3:mapVar}$0",
+		"description": "std::map<type1, type2> var"
+	},
+	"iterator": {
+		"scope": "cpp",
+		"prefix": "iterator_list",
+		"body": "for(std::list<${1:type}>::iterator ${2:i} = ${3:collection}.begin(); ${2:i} != ${3:collection}.end(); ${2:i}++)$0",
+		"description": "for i in list/vector"
+	},
+}

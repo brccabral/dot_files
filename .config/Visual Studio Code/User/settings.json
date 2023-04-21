@@ -1,0 +1,117 @@
+// Global settings
+{
+    "C_Cpp.intelliSenseCacheSize": 2048,
+    "C_Cpp.intelliSenseCachePath": "/media/username/Data/CPP_Projects/.vscode_linux/.cache",
+    "C_Cpp.default.browse.databaseFilename": "/media/username/Data/CPP_Projects/.vscode_linux/.browse.VC.db",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    // Windows
+    // "C_Cpp.intelliSenseCachePath": "D:\\CPP_Projects\\.cache",
+
+    "cmake.buildDirectory": "${workspaceFolder}/build_dir",
+    "cmake.configureArgs": [
+        "-DCMAKE_INSTALL_PREFIX=../install_dir"
+    ],
+    "cmake.configureOnOpen": false,
+    "cmake.debugConfig": {
+        "cwd": "${workspaceFolder}/build_dir"
+    },
+    "cmake.setBuildTypeOnMultiConfig": true,
+
+    "debug.onTaskErrors": "showErrors",
+    
+    "diffEditor.ignoreTrimWhitespace": false,
+    
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
+    "editor.fontFamily": "JetBrains Mono NL",
+    "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#FF5555",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#F1FA8C",
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    
+    "files.autoSave": "afterDelay",
+    //"files.encoding": "iso88591",
+    "files.associations": {
+        "*.vert": "c",
+        "*.frag": "c",
+        "*.aqf": "xml",
+        "*.aev": "xml",
+        "*.make": "makefile"
+    },
+    
+    "formatFiles.excludedFolders": [
+        "node_modules",
+        ".vscode",
+        ".git",
+        "dist",
+        ".chrome",
+        "log4php"
+    ],
+    
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    
+    "intelephense.environment.phpVersion": "8.1.7",
+    "intelephense.format.braces": "allman",
+    
+    "jupyter.askForKernelRestart": false,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    
+    // "php.validate.executablePath": "C:\\Users\\Username\\Documents\\php-8.1.7-Win32-vs16-x64\\php.exe",
+    
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore",
+        "E501,E203,W503,W504"
+    ],
+    "python.linting.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py",
+        "**/Lib/**/*.py",
+        "**/venv/**/*.py",
+        "**/.venv/*.py"
+    ],
+    "python.terminal.executeInFileDir": true,
+    
+    // "redhat.telemetry.enabled": false,
+    
+    "telemetry.telemetryLevel": "off",
+    
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+    // Windows
+    // "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+    // "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    
+    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "compact",
+    
+    "workbench.editor.enablePreview": false,
+    "workbench.colorTheme": "Default Dark+ Experimental",
+    "workbench.startupEditor": "none",
+}

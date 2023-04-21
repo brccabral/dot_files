@@ -1,0 +1,170 @@
+{
+	"sg.Window": {
+		"scope": "python",
+		"prefix": "sg_window",
+		"body": [
+			"window = sg.Window(\"${1:Title}\", layout, size=(${2:100}, ${3:100}))$0"
+		],
+		"description": "sg.Window"
+	},
+	"sg.Input": {
+		"scope": "python",
+		"prefix": "sg_input",
+		"body": [
+			"sg.Input(key=\"-${1:INPUT}-\", expand_x=${2|True,False|})$0"
+		],
+		"description": "sg.Input"
+	},
+	"sg.Input_extended": {
+		"scope": "python",
+		"prefix": "sg_input_extended",
+		"body": [
+			"sg.Input(key=\"-${1:INPUT}-\"${2:, expand_x=True})$0"
+		],
+		"description": "sg.Input"
+	},
+	"sg.Canvas": {
+		"scope": "python",
+		"prefix": "sg_canvas",
+		"body": [
+			"sg.Canvas(key=\"-${1:CANVAS}-\")$0"
+		],
+		"description": "sg.Canvas"
+	},
+	"sg.Spin": {
+		"scope": "python",
+		"prefix": "sg_spin",
+		"body": [
+			"sg.Spin([${1}], key=\"-${2:SPIN}-\")$0"
+		],
+		"description": "sg.Spin"
+	},
+	"sg.Button": {
+		"scope": "python",
+		"prefix": "sg_button",
+		"body": [
+			"sg.Button(\"${1:Button}\", key=\"-${2:BUTTON}-\")$0"
+		],
+		"description": "sg.Button"
+	},
+	"sg.Button_extended": {
+		"scope": "python",
+		"prefix": "sg_button_extended",
+		"body": [
+			"sg.Button(\"${1:Button}\", key=\"-${2:BUTTON}-\", expand_x=${3:False}, size=(${4:1, 1}), button_color=${5:black}, border_width=${6:0})$0"
+		],
+		"description": "sg.Button"
+	},
+	"sg.Text": {
+		"scope": "python",
+		"prefix": "sg_text",
+		"body": [
+			"sg.Text(\"${1:Text}\", key=\"-${2:TEXT}-\")$0"
+		],
+		"description": "sg.Text"
+	},
+	"sg.Text_extended": {
+		"scope": "python",
+		"prefix": "sg_text_extended",
+		"body": [
+			"sg.Text(\"${1:Text}\", key=\"-${2:TEXT}-\", font=\"${3:Arial 12}\", justification=\"${4|left,center,right|}\", expand_x=${5|True,False|}, pad=(${6:5, 5}), visible=${7|True,False|}, background_color='${8:white}', text_color='${9:black}')$0"
+		],
+		"description": "sg.Text"
+	},
+	"sg.Multiline": {
+		"scope": "python",
+		"prefix": "sg_multiline",
+		"body": [
+			"sg.Multiline('${1:Text}', key=\"-${2:TEXTBOX}-\", no_scrollbar=${3:True}, size=(${4:40}, ${5:30}), disabled=${6|True,False|})$0"
+		],
+		"description": "sg.Multiline"
+	},
+	"sg.Menu": {
+		"scope": "python",
+		"prefix": "sg_menu",
+		"body": [
+			"sg.Menu([['${1:Menu}',['${2:Option1}',['${3:Option2}',['${4:suboption}']]]]])$0"
+		],
+		"description": "sg.Menu"
+	},
+	"sg.Frame": {
+		"scope": "python",
+		"prefix": "sg_frame",
+		"body": [
+			"sg.Frame('${1:FrameTitle}', layout=[[]])$0"
+		],
+		"description": "sg.Frame"
+	},
+	"sg.Tab": {
+		"scope": "python",
+		"prefix": "sg_tab",
+		"body": [
+			"sg.Tab('${1:TabTitle}', layout=[[]])$0"
+		],
+		"description": "sg.Tab"
+	},
+	"sg.TabGroup": {
+		"scope": "python",
+		"prefix": "sg_tabgroup",
+		"body": [
+			"sg.TabGroup(layout=[[]])$0"
+		],
+		"description": "sg.TabGroup"
+	},
+	"sg.Slider": {
+		"scope": "python",
+		"prefix": "sg_slider",
+		"body": [
+			"sg.Slider(key=\"-${1:SLIDER}-\", orientation=\"${2|h,v|}\", range=(${3:0}, ${4:100}))$0"
+		],
+		"description": "sg.Slider"
+	},
+	"sg.Checkbox": {
+		"scope": "python",
+		"prefix": "sg_checkbox",
+		"body": [
+			"sg.Checkbox(\"${1:CheckboxLabel}\", key=\"-${2:CHECKBOX}-\")$0"
+		],
+		"description": "sg.Checkbox"
+	},
+	"sg.Column": {
+		"scope": "python",
+		"prefix": "sg_column",
+		"body": [
+			"sg.Column([[]])$0"
+		],
+		"description": "sg.Column"
+	},
+	"sg.Push": {
+		"scope": "python",
+		"prefix": "sg_push",
+		"body": [
+			"sg.Push()$0"
+		],
+		"description": "sg.Push"
+	},
+	"sg.VPush": {
+		"scope": "python",
+		"prefix": "sg_vpush",
+		"body": [
+			"sg.VPush()$0"
+		],
+		"description": "sg.VPush"
+	},
+	"sg.Progress": {
+		"scope": "python",
+		"prefix": "sg_progress",
+		"body": [
+			"sg.Progress(${1:100}, key=\"-${1:PROGRESS}-\", expand_x=\"${2|True,False|}\", size=(${3:20}, ${4:20}), bar_color=('green', 'white'))$0"
+		],
+		"description": "sg.Progress"
+	},
+	"sg.Image": {
+		"scope": "python",
+		"prefix": "sg_image",
+		"body": [
+			"sg.Image(\"${1:/path/to/image.png}\", key=\"-${2:IMAGE}-\", background_color='${3:white}')$0"
+		],
+		"description": "sg.Image"
+	},
+}

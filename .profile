@@ -30,6 +30,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     fi
 fi
 
+# set LD_LIBRARY_PATH so it includes system's local lib if it exists
+if [ -d "/usr/local/lib" ] ; then
+    if [[ $LD_LIBRARY_PATH != *"/usr/local/lib"* ]] ; then
+        LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+    fi
+fi
+
 # set LD_LIBRARY_PATH so it includes user's .local lib if it exists
 if [ -d "$HOME/.local/lib" ] ; then
     if [[ $LD_LIBRARY_PATH != *"$HOME/.local/lib"* ]] ; then

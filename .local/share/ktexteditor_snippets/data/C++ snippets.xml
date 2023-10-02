@@ -1,4 +1,4 @@
-<snippets authors="Bruno Cabral" filetypes="C++" namespace="" name="C++ snippets" license="">
+<snippets filetypes="C++" name="C++ snippets" license="" authors="Bruno Cabral" namespace="">
  <script>function fileName() { return document.fileName(); }
 function fileUrl() { return document.url(); }
 function encoding() { return document.encoding(); }
@@ -8,22 +8,38 @@ function upper(x) { return x.toUpperCase(); }
 function lower(x) { return x.toLowerCase(); }
 </script>
  <item>
-  <match>include_vector</match>
+  <match>brc_include_algorithm</match>
+  <fillin>#include &lt;algorithm>
+</fillin>
+ </item>
+ <item>
+  <match>brc_remove</match>
+  <fillin>auto ${new_end} = remove ( ${collection}.begin(), ${collection}.end(), ${to_remove_ref} );${cursor}</fillin>
+ </item>
+ <item>
+  <match>brc_struct</match>
+  <fillin>struct ${StructName}
+{
+    ${cursor}
+};</fillin>
+ </item>
+ <item>
+  <match>brc_include_vector</match>
   <fillin>#include &lt;vector>
 </fillin>
  </item>
  <item>
-  <match>include_string</match>
+  <match>brc_include_string</match>
   <fillin>#include &lt;string>
 </fillin>
  </item>
  <item>
-  <match>include_map</match>
+  <match>brc_include_map</match>
   <fillin>#include &lt;map>
 </fillin>
  </item>
  <item>
-  <match>main</match>
+  <match>brc_main</match>
   <fillin>int main()
 {
     ${cursor}
@@ -32,27 +48,27 @@ function lower(x) { return x.toLowerCase(); }
 </fillin>
  </item>
  <item>
-  <match>using_namespace_std</match>
+  <match>brc_using_namespace_std</match>
   <fillin>using namespace std;
 </fillin>
  </item>
  <item>
-  <match>cout</match>
+  <match>brc_cout</match>
   <fillin>cout &lt;&lt; ${cursor} &lt;&lt; endl;
 </fillin>
  </item>
  <item>
-  <match>cout_std</match>
+  <match>brc_cout_std</match>
   <fillin>std::cout &lt;&lt; ${cursor} &lt;&lt; std::endl;
 </fillin>
  </item>
  <item>
-  <match>include_ostream</match>
+  <match>brc_include_ostream</match>
   <fillin>#include &lt;ostream>
 </fillin>
  </item>
  <item>
-  <match>output_stream</match>
+  <match>brc_output_stream</match>
   <fillin>friend ostream &amp;operator&lt;&lt;(ostream &amp;os, const ${ClassName} &amp;obj)
 {
     os &lt;&lt; ${cursor};
@@ -61,53 +77,52 @@ function lower(x) { return x.toLowerCase(); }
 </fillin>
  </item>
  <item>
-  <match>include_sstream</match>
+  <match>brc_include_sstream</match>
   <fillin>#include &lt;sstream>
 </fillin>
  </item>
  <item>
-  <match>include_memory</match>
+  <match>brc_include_memory</match>
   <fillin>#include &lt;memory>
 </fillin>
  </item>
  <item>
-  <match>include_iostream</match>
+  <match>brc_include_iostream</match>
   <fillin>#include &lt;iostream>
 </fillin>
  </item>
  <item>
-  <match>for_auto_reverse</match>
+  <match>brc_for_auto_reverse</match>
   <fillin>for(auto ${it} = rbegin(${collection}); ${it} != rend(${collection}); ++${it})
 {
     ${cursor}
 }</fillin>
  </item>
  <item>
-  <match>for_auto</match>
+  <match>brc_for_auto</match>
   <fillin>for ( auto &amp;&amp;${it} : ${collection} )
 {
     ${cursor}
 }</fillin>
  </item>
  <item>
-  <match>accumulate</match>
+  <match>brc_accumulate</match>
   <fillin>${ResultType} ${result} = accumulate ( ${collection}.begin(), ${collection}.end(), 0, [] ( ${ResultType} ${prev}, ${CollectionItemType} ${current} )
 {
     return ${prev} + ${current};${cursor}
 } );</fillin>
  </item>
  <item>
-  <match>pragma_once</match>
+  <match>brc_pragma_once</match>
   <fillin>#pragma once
 </fillin>
  </item>
  <item>
-  <match>vector_var</match>
-  <fillin>vector&lt;${TypeVar}> ${var};
-</fillin>
+  <match>brc_vector_var</match>
+  <fillin>vector&lt;${TypeVar}> ${var};${cursor}</fillin>
  </item>
  <item>
-  <match>copy_if</match>
+  <match>brc_copy_if</match>
   <fillin>${CollectionType} ${result} ( ${collection}.size() );
 auto ${it} = copy_if ( ${collection}.begin(), ${collection}.end(), ${result}.begin(),
                     [&amp;] ( ${CollectionItemType} ${item} )
@@ -117,18 +132,45 @@ auto ${it} = copy_if ( ${collection}.begin(), ${collection}.end(), ${result}.beg
 ${result}.resize ( distance ( ${result}.begin(), ${it} ) );</fillin>
  </item>
  <item>
-  <match>transform</match>
+  <match>brc_transform</match>
   <fillin>${outputCollection}.resize(${inputCollection}.size());
 std::transform(${inputCollection}.begin(), ${inputCollection}.end(), ${outputCollection}.begin(),
                 [](const ${InputItemType} ${inputItem}){ return ${outputItem};});</fillin>
  </item>
  <item>
-  <match>find</match>
+  <match>brc_find</match>
   <fillin>auto ${it} = find(${collection}.begin(), ${collection}.end(), ${searchMe});
 if(${it} == ${collection}.end())
     cout &lt;&lt; "not found" &lt;&lt; endl;
 else
     cout &lt;&lt; "found " &lt;&lt; *${it} &lt;&lt; endl;
+</fillin>
+ </item>
+ <item>
+  <match>brc_find_if</match>
+  <fillin>auto ${it} = find_if ( begin ( ${collection} ), end ( ${collection} ), [] ( ${CollectionItemType} ${collectionItem} )
+{
+    return ${condition}${cursor};
+} );
+</fillin>
+ </item>
+ <item>
+  <match>brc_erase</match>
+  <fillin>${collection}.erase (
+    std::remove ( ${collection}.begin(), ${collection}.end(), ${to_remove_ref} ), // * new end()
+    ${collection}.end() // * old end()
+);${cursor}</fillin>
+ </item>
+ <item>
+  <match>brc_try_catch</match>
+  <fillin>try
+{
+    ${do_something}
+}
+catch ( const exception &amp;e )
+{
+    ${catch_me="cout &lt;&lt; e.what() &lt;&lt; endl"};
+}
 </fillin>
  </item>
 </snippets>

@@ -1,0 +1,119 @@
+<templateSet group="PythonCode">
+  <template name="foriter" value="for $VAR$ in $ITERABLE$:&#10;    $END$" description="Iterate (for ... in ...)" toReformat="false" toShortenFQNames="true">
+    <variable name="ITERABLE" expression="pyIterableVariable()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="collectionElementName(ITERABLE)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="foritere" value="for $INDEX$, $VAR$ in enumerate($ITERABLE$):&#10;    $END$" description="Iterate (for ... in enumerate)" toReformat="false" toShortenFQNames="true">
+    <variable name="ITERABLE" expression="pyIterableVariable()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="collectionElementName(ITERABLE)" defaultValue="" alwaysStopAt="true" />
+    <variable name="INDEX" expression="" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="fromimport" value="from $package$ import $module$" description="from ... import ..." toReformat="false" toShortenFQNames="true">
+    <variable name="package" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="module" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Top_Level" value="true" />
+    </context>
+  </template>
+  <template name="classinit" value="class $classname$:&#10;    def __init__(self$args$):&#10;        $END$" description="class ClassName:" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="classobj" value="class $classname$($object$):&#10;    def __init__(self$args$):&#10;        super().init()&#10;        $END$" description="class ClassName(SuperClass)" toReformat="false" toShortenFQNames="true">
+    <variable name="classname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="object" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="superinit" value="super().init($v$)$END$" description="super().init()" toReformat="false" toShortenFQNames="true">
+    <variable name="v" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="deffunc" value="def $func$($args$):&#10;    $END$" description="def func(args):" toReformat="false" toShortenFQNames="true">
+    <variable name="func" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="Python_Class" value="false" />
+    </context>
+  </template>
+  <template name="defself" value="def $func$(self$args$):&#10;    $END$" description="def func(self):" toReformat="false" toShortenFQNames="true">
+    <variable name="func" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="defselfargs" value="def $func$(self, $args$):" description="def func(self, args):" toReformat="false" toShortenFQNames="true">
+    <variable name="func" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="definit" value="def __init__(self$args$):&#10;    $END$" description="def __init__(self):" toReformat="false" toShortenFQNames="true">
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python_Class" value="true" />
+    </context>
+  </template>
+  <template name="forrange" value="for $var$ in range($N$):&#10;    $END$" description="for v in range(n):" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="N" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="forkeyvalue" value="for $key$, $value$ in $iter$:&#10;    $END$" description="for key, value in iter:" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="iter" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="tryexception" value="try:&#10;    $END$&#10;exception Exception as e:" description="try: exception Exception as e:" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="printf" value="print(f&quot;$END$&quot;)" description="print(f&quot;&quot;)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="withopen" value="with open($res$, $mode$) as $r$:&#10;    $END$" description="with open(res, mode) as r:" toReformat="false" toShortenFQNames="true">
+    <variable name="res" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="mode" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="r" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="getlogger" value="self.log = logging.getLogger(self.__class__.__name__)" description="self.log = logging.getLogger(self.__class__.__name__)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="loggerconfig" value="logging.basicConfig(format='%(asctime)s - %(levelname)s - %(relativeCreated)d - %(threadName)s.%(module)s.%(name)s.%(funcName)s:%(lineno)d - %(message)s', datefmt='%H:%M:%S', level=logging.DEBUG)" description="logging.basicConfig()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python_Top_Level" value="true" />
+    </context>
+  </template>
+  <template name="logmessage" value="self.log.$debug$(f&quot;$END$&quot;)" description="self.log.debug()" toReformat="false" toShortenFQNames="true">
+    <variable name="debug" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>

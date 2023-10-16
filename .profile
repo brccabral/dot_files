@@ -81,3 +81,11 @@ export LD_LIBRARY_PATH
 export C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH
 export CPATH
+
+export GTK_THEME=Yaru-blue-dark
+
+export QT_PLUGIN_PATH=/usr/local/lib/x86_64-linux-gnu/plugins
+
+if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
+    export XCURSOR_SIZE=24
+fi

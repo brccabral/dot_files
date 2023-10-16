@@ -13,6 +13,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+export QT_QPA_PLATFORMTHEME=
 if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
     export QT_QPA_PLATFORMTHEME=qt5ct
 fi

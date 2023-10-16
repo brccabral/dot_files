@@ -1,5 +1,5 @@
 # some more ls aliases
-alias ls='ls --hyperlink=auto --color=auto'
+alias ls='ls --hyperlink=auto --color=auto --group-directories-first'
 alias ll='ls -alF'
 alias la='ls -Alh'
 alias l='ls -CF'

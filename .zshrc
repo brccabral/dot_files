@@ -123,8 +123,3 @@ fi
 if [ -f ~/.bash_exports ]; then
     . ~/.bash_exports
 fi
-
-# Emscripten
-if [ -f /mnt/Data/CPP_Projects/emsdk_linux/emsdk_env.sh ]; then
-    . /mnt/Data/CPP_Projects/emsdk_linux/emsdk_env.sh 2>/dev/null 1>/dev/null
-fi

@@ -30,6 +30,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     fi
 fi
 
+# set PATH so it includes swift bin if it exists
+if [ -d "$HOME/.local/swift/usr/bin" ] ; then
+    if [[ $PATH != *"$HOME/.local/swift/usr/bin"* ]] ; then
+        PATH="$PATH:$HOME/.local/swift/usr/bin"
+    fi
+fi
+
 # set LD_LIBRARY_PATH so it includes system's local lib if it exists
 if [ -d "/usr/local/lib" ] ; then
     if [[ $LD_LIBRARY_PATH != *"/usr/local/lib"* ]] ; then

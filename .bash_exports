@@ -22,3 +22,6 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 source "/mnt/Data/CPP_Projects/emsdk_linux/emsdk_env.sh" 2>/dev/null 1>/dev/null
 
+# dummy value - not today hacker, not today...
+export DEBGET_TOKEN=github_abc123
+export DEBGET_CACHE_RTN=1

@@ -19,7 +19,11 @@ alias egrep='egrep --color=auto'
 #alias lc='colorls -lA --sd'
 
 #alias git-cola='QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct git-cola'
-#alias git-cola='QT_QPA_PLATFORMTHEME=qt5ct git-cola'
+alias git-cola='QT_QPA_PLATFORMTHEME=qt5ct git-cola'
+alias qt5ct='QT_QPA_PLATFORMTHEME=qt5ct qt5ct'
+alias bauh='QT_QPA_PLATFORMTHEME=qt5ct bauh'
+# alias kdevelop='QT_QPA_PLATFORMTHEME=qt5ct kdevelop'
+alias kdevelop='XCURSOR_SIZE=24 kdevelop'
 
 # Change directory aliases
 alias home='cd ~'
@@ -38,7 +42,11 @@ alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
 alias ips="ip -c -br a"
-alias ports="sudo netstat -tulanp"
+#alias ports="sudo netstat -tulanp"
+#alias ports="sudo ss -tulanp"
+alias ports="sudo lsof -i -P -n"
 alias filesize="du -sh * | sort -h"
 alias hg="history|grep"
 alias mkdir_r="mkdir -pv"
+
+alias catn="cat -n"

@@ -1,5 +1,9 @@
 function nip() {
     _print_network_info() {
+        # return if ${1} is empty
+        if [ -z ${1} ]; then
+            return
+        fi
         network_name="$(docker network inspect --format "{{.Name}}" "${1}" | sed 's/\///')"
         network_id="$(docker network inspect --format "{{.ID}}" "${1}")"
         network_subnets="$(docker network inspect --format "{{range .IPAM.Config}}{{.Subnet}}{{end}}" "${1}")"
@@ -12,14 +16,15 @@ function nip() {
     echo "NETWORK,SUBNETS,GATEWAYS,ID" >/tmp/docker-network.txt
 
     if [ -z "${1}" ]; then
-        # if ${1} is empty
-        local network_search
-        docker network ls --format "{{.ID}}" | while read -r network_search; do
-            _print_network_info "$network_search"
+        # if ${1} is empty, print all networks
+        docker network ls --format "{{.ID}}" | while read -r network_id; do
+            _print_network_info "$network_id"
         done
     else
-        # only calls _print_network_info if passed param exits
-        docker network ls --format "{{.ID}} {{.Name}}" | grep -q "\b${1}\b" && _print_network_info "${1}"
+        # print all networks that ID or Name starts with ${1}
+        docker network ls --format "{{.ID}} {{.Name}}" | awk "/^${1}| ${1}/ {print \$1}" | while read -r network_id; do
+            _print_network_info "$network_id"
+        done
     fi
 
     column -s "," --output-separator " ┊ " -t /tmp/docker-network.txt
@@ -31,7 +36,11 @@ function nip() {
 
 function cip() {
     _print_container_info() {
-        container_ports="$(docker container inspect --format='{{range $p, $conf := .NetworkSettings.Ports}}{{if $conf}}{{(index $conf 0).HostPort}}{{else}}null{{end}}:{{$p}} {{end}}' "${1}")"
+        # return if ${1} is empty
+        if [ -z ${1} ]; then
+            return
+        fi
+        container_ports="$(docker container inspect --format='{{range $p, $conf := .NetworkSettings.Ports}}{{if $conf}}{{if ne (index $conf 0).HostIp "0.0.0.0"}}{{(index $conf 0).HostIp}}:{{end}}{{(index $conf 0).HostPort}}{{else}}null{{end}}:{{$p}} {{end}}' "${1}")"
         container_name="$(docker container inspect --format "{{.Name}}" "${1}" | sed 's/\///')"
         container_id="$(docker container inspect --format "{{.ID}}" "${1}")"
         container_ip="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}" "${1}")"
@@ -49,15 +58,23 @@ function cip() {
     # echo 'CONTAINER,IP,Gateway,Mac,IPv6,IPv6 Gateway,PORTS,Networks,ID' >/tmp/docker-container.txt
     echo 'CONTAINER,IP,Gateway,PORTS,Networks,ID' >/tmp/docker-container.txt
 
+    all_flag=""
+    if [ "${1}" = "-all" ]; then
+        all_flag="-a"
+        container_search=$2
+    else
+        container_search=$1
+    fi
     if [ -z "${1}" ]; then
-        # if ${1} is empty
-        local container_search
-        docker ps -a --format "{{.ID}}" | while read -r container_search; do
-            _print_container_info "$container_search"
+        # if ${1} is empty, print all containers
+        docker ps -q | while read -r container_id; do
+            _print_container_info "$container_id"
         done
     else
-        # only calls _print_container_info if passed param exits
-        docker container ls --format "{{.ID}} {{.Names}}" | grep -q "\b${1}\b" && _print_container_info "${1}"
+        # print all containers that ID or Name starts with ${1}
+        docker container ls $all_flag --format "{{.ID}} {{.Names}}" | awk "/^${container_search}| ${container_search}/ {print \$1}" | while read -r container_id; do
+            _print_container_info "$container_id"
+        done
     fi
 
     column -s "," --output-separator " ┊ " -t /tmp/docker-container.txt

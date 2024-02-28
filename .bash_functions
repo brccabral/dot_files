@@ -83,3 +83,11 @@ function cip() {
     rm -r /tmp/docker-container.txt
 
 }
+
+function dexec() {
+    if [ -z $2 ]; then
+        docker exec -it $1 /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
+    else
+        docker exec -u $1 -it $2 /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
+    fi
+}

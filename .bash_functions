@@ -48,10 +48,10 @@ function cip() {
         container_mac="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.MacAddress}} {{end}}" "${1}")"
         container_ipv6="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.GlobalIPv6Address}} {{end}}" "${1}")"
         container_ipv6_gateway="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.IPv6Gateway}} {{end}}" "${1}")"
-        container_network=($(docker container inspect --format "{{range \$k, \$v := .NetworkSettings.Networks}}{{printf \"%s\n\" \$k}}{{end}}" "${1}"))
+        container_network="$(docker container inspect --format "{{range \$k, \$v := .NetworkSettings.Networks}}{{\$k}} {{end}}" "${1}")"
 
-        # echo ''$container_name','$container_ip','$container_gateway','$container_mac','$container_ipv6','$container_ipv6_gateway','${container_ports[*]}','${container_network[*]}','${container_id:0:12}'' >>/tmp/docker-container.txt
-        echo ''$container_name','$container_ip','$container_gateway','$container_ports','${container_network[*]}','${container_id:0:12}'' >>/tmp/docker-container.txt
+        # echo ''$container_name','$container_ip','$container_gateway','$container_mac','$container_ipv6','$container_ipv6_gateway','$container_ports','$container_network','${container_id:0:12}'' >>/tmp/docker-container.txt
+        echo ''$container_name','$container_ip','$container_gateway','$container_ports','$container_network','${container_id:0:12}'' >>/tmp/docker-container.txt
     }
 
     echo '------------------------------------------------------'

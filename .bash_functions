@@ -6,7 +6,7 @@ function nip() {
         fi
         network_inspect=$(docker network inspect --format "{{.Name}}""\
 ,{{range .IPAM.Config}}{{.Subnet}}{{end}}""\
-,{{range .IPAM.Config}}{{if (index . \"Gateway\")}}{{(index . \"Gateway\")}}{{end}}{{end}}""\
+,{{range .IPAM.Config}}{{if (index . \"Gateway\")}}{{.Gateway}}{{end}}{{end}}""\
 ,{{slice .Id 0 12}}" \
             "${1}")
         echo $network_inspect >>/tmp/docker-network.txt

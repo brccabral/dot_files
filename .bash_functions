@@ -4,12 +4,12 @@ function nip() {
         if [ -z ${1} ]; then
             return
         fi
-        network_name="$(docker network inspect --format "{{.Name}}" "${1}" | sed 's/\///')"
-        network_id="$(docker network inspect --format "{{.ID}}" "${1}")"
-        network_subnets="$(docker network inspect --format "{{range .IPAM.Config}}{{.Subnet}}{{end}}" "${1}")"
-        network_gateways="$(docker network inspect --format "{{range .IPAM.Config}}{{.Gateway}}{{end}}" "${1}")"
-
-        echo "$network_name","$network_subnets","$network_gateways","${network_id:0:12}" >>/tmp/docker-network.txt
+        network_inspect=$(docker network inspect --format "{{.Name}}""\
+,{{range .IPAM.Config}}{{.Subnet}}{{end}}""\
+,{{range .IPAM.Config}}{{if (index . \"Gateway\")}}{{(index . \"Gateway\")}}{{end}}{{end}}""\
+,{{slice .Id 0 12}}" \
+            "${1}")
+        echo $network_inspect >>/tmp/docker-network.txt
     }
 
     echo "------------------------------------------------------"
@@ -40,18 +40,19 @@ function cip() {
         if [ -z ${1} ]; then
             return
         fi
-        container_ports="$(docker container inspect --format='{{range $p, $conf := .NetworkSettings.Ports}}{{if $conf}}{{if ne (index $conf 0).HostIp "0.0.0.0"}}{{(index $conf 0).HostIp}}:{{end}}{{(index $conf 0).HostPort}}{{else}}null{{end}}:{{$p}} {{end}}' "${1}")"
-        container_name="$(docker container inspect --format "{{.Name}}" "${1}" | sed 's/\///')"
-        container_id="$(docker container inspect --format "{{.ID}}" "${1}")"
-        container_ip="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}" "${1}")"
-        container_gateway="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.Gateway}} {{end}}" "${1}")"
-        container_mac="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.MacAddress}} {{end}}" "${1}")"
-        container_ipv6="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.GlobalIPv6Address}} {{end}}" "${1}")"
-        container_ipv6_gateway="$(docker container inspect --format "{{range .NetworkSettings.Networks}}{{.IPv6Gateway}} {{end}}" "${1}")"
-        container_network="$(docker container inspect --format "{{range \$k, \$v := .NetworkSettings.Networks}}{{\$k}} {{end}}" "${1}")"
 
-        # echo ''$container_name','$container_ip','$container_gateway','$container_mac','$container_ipv6','$container_ipv6_gateway','$container_ports','$container_network','${container_id:0:12}'' >>/tmp/docker-container.txt
-        echo ''$container_name','$container_ip','$container_gateway','$container_ports','$container_network','${container_id:0:12}'' >>/tmp/docker-container.txt
+        # {{range .NetworkSettings.Networks}}{{.MacAddress}} {{end}}
+        # {{range .NetworkSettings.Networks}}{{.GlobalIPv6Address}} {{end}}
+        # {{range .NetworkSettings.Networks}}{{.IPv6Gateway}} {{end}}
+        container_inspect=$(docker container inspect --format="{{slice .Name 1}}""\
+,{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}""\
+,{{range .NetworkSettings.Networks}}{{.Gateway}} {{end}}""\
+,{{range \$p, \$conf := .NetworkSettings.Ports}}{{if \$conf}}{{if ne (index \$conf 0).HostIp \"0.0.0.0\"}}{{(index \$conf 0).HostIp}}:{{end}}{{(index \$conf 0).HostPort}}{{else}}null{{end}}:{{\$p}} {{end}}""\
+,{{range \$k, \$v := .NetworkSettings.Networks}}{{\$k}} {{end}}""\
+,{{slice .Id 0 12}}" \
+            "${1}")
+
+        echo $container_inspect >>/tmp/docker-container.txt
     }
 
     echo '------------------------------------------------------'

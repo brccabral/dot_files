@@ -92,3 +92,11 @@ function dexec() {
         docker exec -u $1 -it $2 /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
     fi
 }
+
+function dlogs() {
+    if [ -z $2 ]; then
+        docker logs -fn 10 $1
+    else
+        docker logs -fn $1 $2
+    fi
+}

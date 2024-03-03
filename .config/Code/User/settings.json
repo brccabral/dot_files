@@ -1,0 +1,335 @@
+// Global settings
+{
+    // C/C++ Microsoft
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    // "C_Cpp.default.browse.databaseFilename": "/mnt/Data/CPP_Projects/.vscode_linux/.browse.VC.db",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "C_Cpp.default.cppStandard": "c++20",
+    // "C_Cpp.intelliSenseCacheSize": 8192,
+    // "C_Cpp.intelliSenseCachePath": "/mnt/Data/CPP_Projects/.vscode_linux/.cache",
+    "C_Cpp.intelliSenseUpdateDelay": 3000,
+    "C_Cpp.workspaceParsingPriority": "low",
+    // Windows
+    // "C_Cpp.intelliSenseCachePath": "D:\\CPP_Projects\\.cache",
+    // C/C++ Advanced Lint
+    "c-cpp-flylint.clang.enable": false,
+    "c-cpp-flylint.flawfinder.enable": false,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.lizard.enable": false,
+    "c-cpp-flylint.cppcheck.extraArgs": [
+        "--quiet",
+        "--force",
+        "--enable=all",
+        // "-I",
+        // "\"C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\""
+    ],
+    // CMake Tools Microsoft
+    "cmake.buildDirectory": "${workspaceFolder}/build_dir",
+    // "cmake.buildDirectory": "${workspaceFolder}/build_win",
+    "cmake.automaticReconfigure": false,
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.debugConfig": {
+        // "cwd": "${workspaceFolder}/out/build/linux-debug/code"
+        "cwd": "${workspaceFolder}/build_dir",
+        // "cwd": "${workspaceFolder}/build_win",
+    },
+    "cmake.emscriptenSearchDirs": [
+        "/mnt/Data/CPP_Projects/emsdk_linux"
+        // "D:\\CPP_Projects\\emsdk_win"
+    ],
+    // "cmake.generator": "Unix Makefiles", // Default is Ninja
+    "cmake.installPrefix": "${workspaceFolder}/install_dir",
+    // "cmake.installPrefix": "${workspaceFolder}/install_win",
+    "cmake.launchBehavior": "newTerminal",
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.setBuildTypeOnMultiConfig": true,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.useCMakePresets": "auto",
+    // cmake-format
+    "cmakeFormat.exePath": ".venv/bin/cmake-format",
+    // "cmakeFormat.exePath": "venv\\Scripts\\cmake-format.exe",
+    // VSCode
+    "debug.onTaskErrors": "showErrors",
+    "diffEditor.ignoreTrimWhitespace": false,
+    // VSCode
+    "editor.autoClosingBrackets": "always",
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "JetBrains Mono NL",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
+    "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#FF5555",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#F1FA8C",
+                    "fontStyle": "bold"
+                }
+            }
+        ],
+        "[Agila Oceanic Next]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "meta.attribute.python",
+                        "meta.member.access.python"
+                    ],
+                    "settings": {
+                        "foreground": "#BB80B3",
+                        "fontStyle": "italic bold"
+                    }
+                },
+            ]
+        },
+        "[Dracula]": {
+            "textMateRules": [
+                {
+                    "scope": "entity.name.namespace",
+                    "settings": {
+                        "foreground": "#8BE9FD",
+                        "fontStyle": "italic bold"
+                    }
+                },
+                {
+                    "scope": "variable.other.property",
+                    "settings": {
+                        "foreground": "#50FA7B",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.readwrite",
+                    "settings": {
+                        "foreground": "#F8F8F2",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#50FA7B",
+                        "fontStyle": "italic"
+                    }
+                },
+            ],
+        }
+    },
+    // VSCode
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    // VSCode
+    "files.autoSave": "afterDelay",
+    //"files.encoding": "iso88591",
+    "files.associations": {
+        "*.vert": "c",
+        "*.frag": "c",
+        "*.aqf": "xml",
+        "*.aev": "xml",
+        "*.make": "makefile"
+    },
+    // Flake8 Microsoft
+    "flake8.args": [
+        "--ignore=E501,E203,W503,W504,E743,E741"
+    ],
+    // Format Files jbockle
+    "formatFiles.excludedFolders": [
+        "node_modules",
+        ".vscode",
+        ".git",
+        "dist",
+        ".chrome",
+        "log4php",
+        "venv",
+        ".venv"
+    ],
+    "formatFiles.excludePattern": "**/jquery*, **/scriptaculous/**",
+    "formatFiles.logLevel": "info",
+    // VSCode
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.defaultBranchName": "master",
+    "git.openRepositoryInParentFolders": "always",
+    // GitLens
+    "gitlens.advanced.messages": {
+        "suppressNoRepositoryWarning": true
+    },
+    // PHP Intelephense
+    "intelephense.environment.phpVersion": "8.1.7",
+    "intelephense.format.braces": "allman",
+    "intelephense.stubs": [
+        "apache",
+        "bcmath",
+        "bz2",
+        "calendar",
+        "com_dotnet",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dba",
+        "dom",
+        "enchant",
+        "exif",
+        "FFI",
+        "fileinfo",
+        "filter",
+        "fpm",
+        "ftp",
+        "gd",
+        "gettext",
+        "gmp",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "ldap",
+        "libxml",
+        "mbstring",
+        "meta",
+        "mysqli",
+        "oci8",
+        "odbc",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_ibm",
+        "pdo_mysql",
+        "pdo_pgsql",
+        "pdo_sqlite",
+        "pgsql",
+        "Phar",
+        "posix",
+        "pspell",
+        "random",
+        "readline",
+        "Reflection",
+        "session",
+        "shmop",
+        "SimpleXML",
+        "snmp",
+        "soap",
+        "sockets",
+        "sodium",
+        "SPL",
+        "sqlite3",
+        "standard",
+        "superglobals",
+        "sysvmsg",
+        "sysvsem",
+        "sysvshm",
+        "tidy",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlrpc",
+        "xmlwriter",
+        "xsl",
+        "Zend OPcache",
+        "zip",
+        "zlib",
+        "sqlsrv",
+        "ssh2"
+    ],
+    // Jupyter Microsoft
+    "jupyter.askForKernelRestart": false,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    // Makefile Tools Microsoft
+    "makefile.dryrunSwitches": [],
+    "makefile.configureOnOpen": false,
+    // Prettier
+    "php.validate.executablePath": "/usr/bin/php",
+    "prettier.tabWidth": 4,
+    // Python Microsoft
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.typeCheckingMode": "basic",
+    // "python.linting.banditEnabled": true,
+    // "python.linting.ignorePatterns": [
+    //     "**/site-packages/**/*.py",
+    //     ".vscode/*.py",
+    //     "**/Lib/**/*.py",
+    //     "**/venv/**/*.py",
+    //     "**/.venv/*.py"
+    // ],
+    "python.terminal.executeInFileDir": true,
+    // XML Red Hat
+    // "redhat.telemetry.enabled": false,
+    // VSCode
+    "scm.countBadge": "focused",
+    // VSCode
+    "telemetry.telemetryLevel": "off",
+    // VSCode
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
+    // Windows
+    // "terminal.integrated.fontFamily": "CaskaydiaCove NF",
+    // "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    // MinGW
+    // "terminal.integrated.profiles.windows": {
+    //   "mingw64": {
+    //     "path": "D:\\msys64\\usr\\bin\\bash.exe",
+    //     "args": [
+    //         "--login",
+    //         "-i"
+    //     ]
+    //   }
+    // },
+    // "terminal.integrated.defaultProfile.windows": "mingw64",
+    // "terminal.integrated.env.windows": {
+    //     "CHERE_INVOKING": "1",
+    //     "MSYSTEM": "MINGW64"
+    // },
+    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // Theme by language
+    "theme-by-language.themes": {
+        // "python": "Dracula",
+        // "jsonc": "Dracula",
+        // "*": "Default Dark Modern"
+        // "python": "Agila Oceanic Next",
+        // "jsonc": "Agila Oceanic Next",
+        // "*": "Agila Oceanic Next"
+    },
+    // Todo Tree
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text",
+        "foreground": "#F48701",
+        "rulerColour": "#F48701",
+        "rulerLane": "none"
+    },
+    // VSCode
+    "window.commandCenter": true,
+    "window.menuBarVisibility": "compact",
+    // VSCode
+    "workbench.colorTheme": "Default Dark Modern",
+    // "workbench.colorTheme": "Agila Oceanic Next",
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    // VSCode
+    // "[css]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[cmake]": {
+        "editor.defaultFormatter": "cheshirekow.cmake-format"
+    },
+    "[yaml]": {
+        "editor.formatOnType": true
+    }
+}

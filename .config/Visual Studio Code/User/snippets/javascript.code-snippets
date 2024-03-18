@@ -1,0 +1,74 @@
+{
+    "for-in-simple": {
+        "scope": "javascript",
+        "prefix": "for-in",
+        "body": [
+            "for(const ${1:key} in ${2:object}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "for key in object"
+    },
+    "for-of-simple": {
+        "scope": "javascript",
+        "prefix": "for-of",
+        "body": [
+            "for(const ${1:value} of ${2:object}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "for value of object"
+    },
+    "console-debug": {
+        "scope": "javascript",
+        "prefix": "debug",
+        "body": [
+            "console.debug($0);"
+        ],
+        "description": "console.debug()"
+    },
+    // "console-warn": {
+    //     "scope": "javascript",
+    //     "prefix": "warn-console",
+    //     "body": [
+    //         "console.warn($0);"
+    //     ],
+    //     "description": "console.warn()"
+    // },
+    // "console-error": {
+    //     "scope": "javascript",
+    //     "prefix": "error-console",
+    //     "body": [
+    //         "console.error($0);"
+    //     ],
+    //     "description": "console.error()"
+    // },
+    "import-from": {
+        "scope": "javascript",
+        "prefix": "import-from",
+        "body": [
+            "import ${2:ComponentName} from '${1:./path}';$0",
+        ],
+        "description": "import from"
+    },
+    "export": {
+        "scope": "javascript",
+        "prefix": "export-default",
+        "body": [
+            "export default ${1:variable};$0",
+        ],
+        "description": "export-default"
+    },
+    "response-error": {
+        "scope": "javascript",
+        "prefix": "response-error",
+        "body": [
+            "const ${2:responseData} = await ${1:response}.json();",
+            "if (!${1:response}.ok) {",
+            "\tconst error = new Error(${2:responseData}.message || '${3:Failed to fetch HTTP request.}');",
+            "\tthrow error;",
+            "}$0",
+        ],
+        "description": "response.ok error"
+    },
+}

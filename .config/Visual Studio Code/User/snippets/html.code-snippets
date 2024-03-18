@@ -1,0 +1,8 @@
+{
+    "dialog": {
+        "scope": "html",
+        "prefix": "dialog",
+        "body": "<dialog ${1:open}>\n\t$0\n</dialog>",
+        "description": "<dialog open?>"
+    }
+}

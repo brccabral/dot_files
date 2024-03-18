@@ -1,0 +1,289 @@
+{
+    // <script>
+    "vue-script-data-init": {
+        "scope": "vue",
+        "prefix": "script-data",
+        "body": [
+            "<script>",
+            "export default {",
+            "\tdata() {",
+            "\t\treturn {",
+            "\t\t\t$0",
+            "\t\t};",
+            "\t},",
+            "};",
+            "</script>"
+        ],
+        "description": "<script> data()"
+    },
+    "vue-script-data": {
+        "scope": "javascript",
+        "prefix": "data",
+        "body": [
+            "data() {",
+            "\treturn {",
+            "\t\t$0",
+            "\t};",
+            "},",
+        ],
+        "description": "data()"
+    },
+    "vue-script-methods": {
+        "scope": "javascript",
+        "prefix": "methods",
+        "body": [
+            "methods: {",
+            "\t${1:someMethod}() {",
+            "\t\t$0",
+            "\t},",
+            "},",
+        ],
+        "description": "methods: {}"
+    },
+    "vue-script-computed": {
+        "scope": "javascript",
+        "prefix": "computed",
+        "body": [
+            "computed: {",
+            "\t${1:someMethod}() {",
+            "\t\t$0",
+            "\t},",
+            "},",
+        ],
+        "description": "computed: {}"
+    },
+    "vue-script-mutations": {
+        "scope": "javascript",
+        "prefix": "mutations",
+        "body": [
+            "mutations: {",
+            "\t${1:someMethod}(state${2:, payload}) {",
+            "\t\t$0",
+            "\t},",
+            "},",
+        ],
+        "description": "mutations: {}"
+    },
+    "vue-script-actions": {
+        "scope": "javascript",
+        "prefix": "actions",
+        "body": [
+            "actions: {",
+            "\t${1:someMethod}(context${2:, payload}) {",
+            "\t\t$0",
+            "\t},",
+            "},",
+        ],
+        "description": "actions: {}"
+    },
+    "vue-script-getters": {
+        "scope": "javascript",
+        "prefix": "getters",
+        "body": [
+            "getters: {",
+            "\t${1:someMethod}(state${2:, getters}) {",
+            "\t\treturn $0;",
+            "\t},",
+            "},",
+        ],
+        "description": "getters: {}"
+    },
+    "vue-script-components": {
+        "scope": "javascript",
+        "prefix": "components",
+        "body": [
+            "components: {$0},",
+        ],
+        "description": "components: {},"
+    },
+    "vue-script-props-simple": {
+        "scope": "javascript",
+        "prefix": "props-simple",
+        "body": [
+            "props: [$0],",
+        ],
+        "description": "props: [],"
+    },
+    "vue-script-inject-simple": {
+        "scope": "javascript",
+        "prefix": "inject-simple",
+        "body": [
+            "inject: [$0],",
+        ],
+        "description": "inject: [],"
+    },
+    "vue-script-emits-simple": {
+        "scope": "javascript",
+        "prefix": "emits-simple",
+        "body": [
+            "emits: [$0],",
+        ],
+        "description": "emits: [],"
+    },
+    "vue-script-components-simple": {
+        "scope": "javascript",
+        "prefix": "components-simple",
+        "body": [
+            "components: [$0],",
+        ],
+        "description": "components: [],"
+    },
+    // Vue.js
+    "vue-router-init": {
+        "scope": "javascript",
+        "prefix": "router-init",
+        "body": [
+            "import { createRouter, createWebHistory } from \"vue-router\";",
+            "const ${1:router} = createRouter({",
+            "\thistory: createWebHistory(),",
+            "\troutes: [",
+            "\t\t{ path: \"/\", component: ${1:null} },$0",
+            "\t]",
+            "});",
+            "export default ${1:router};",
+            "/* lines below go to your main.js */",
+            "import ${1:router} from \"./${2:routerPath}\";",
+            "app.use(${1:router});",
+        ],
+        "description": "router init"
+    },
+    "vue-router-import": {
+        "scope": "javascript",
+        "prefix": "router-import",
+        "body": [
+            "import ${1:router} from \"./${2:routerPath}\";",
+            "app.use(${1:router});",
+        ],
+        "description": "import router"
+    },
+    "vue-vuex-init": {
+        "scope": "javascript",
+        "prefix": "store-createStore-init",
+        "body": [
+            "import { createStore } from 'vuex';",
+            "const store = createStore({",
+            "\tstate() {",
+            "\t\treturn {",
+            "\t\t\t${1:someKey}: ${2:someValue},$0",
+            "\t\t}",
+            "\t}",
+            "});",
+            "app.use(store);",
+        ],
+        "description": "createStore { state() } app.use"
+    },
+    "vue-vuex-modules": {
+        "scope": "javascript",
+        "prefix": "store-modules-init",
+        "body": [
+            "import { createStore } from 'vuex';",
+            "const myModule = { namespaced: ${1|false,true|}, state() {return {}}, getters: {}, actions: {}, mutations: {} };",
+            "const store = createStore({ modules: { moduleName: myModule, } });",
+            "app.use(store);",
+        ],
+        "description": "createStore module app.use"
+    },
+    "vue-vuex-create": {
+        "scope": "javascript",
+        "prefix": "store-create-export",
+        "body": [
+            "import { createStore } from 'vuex';",
+            "import ${1:moduleObject} from '${2:./path}';",
+            "const ${3:store} = createStore({",
+            "\tmodules: {",
+            "\t\t${4:keyName}: ${1:moduleObject}",
+            "\t}",
+            "});",
+            "export default ${3:store};",
+        ],
+        "description": "createStore export"
+    },
+    "vue-vuex-store-module": {
+        "scope": "javascript",
+        "prefix": "store-module",
+        "body": [
+            "const someModule = {",
+            "\tstate() { return {} },",
+            "\tmutations: { someLogic() {}, },",
+            "\tgetters: { someGetter() {}, },",
+            "\tactions: { someAction() {}, },",
+            "};",
+        ],
+        "description": "store-module = {}"
+    },
+    // HTML
+    "vue-html-router-link": {
+        "scope": "vue-html",
+        "prefix": "router-link",
+        "body": [
+            "<router-link to=\"${1:page}\">$0</router-link>",
+        ],
+        "description": "<router-link>"
+    },
+    "vue-html-router-view": {
+        "scope": "vue-html",
+        "prefix": "router-view",
+        "body": [
+            "<router-view>$0</router-view>",
+        ],
+        "description": "<router-view>"
+    },
+    "vue-html-keep-alive": {
+        "scope": "vue-html",
+        "prefix": "keep-alive",
+        "body": [
+            "<keep-alive>$0</keep-alive>",
+        ],
+        "description": "<keep-alive>"
+    },
+    "vue-html-slot": {
+        "scope": "vue-html",
+        "prefix": "slot",
+        "body": [
+            "<slot ${1:name=\"\"}>$0</slot>",
+        ],
+        "description": "<slot>"
+    },
+    "vue-html-template": {
+        "scope": "vue-html",
+        "prefix": "template",
+        "body": [
+            "<template ${1:#namedScope}>\n\t$0\n</template>",
+        ],
+        "description": "<template>"
+    },
+    "vue-html-component": {
+        "scope": "vue-html",
+        "prefix": "component",
+        "body": [
+            "<component :is=\"$0\"></component>",
+        ],
+        "description": "<component>"
+    },
+    "vue-html-teleport": {
+        "scope": "vue-html",
+        "prefix": "teleport",
+        "body": [
+            "<teleport to=\"$0\"></teleport>",
+        ],
+        "description": "<teleport>"
+    },
+    "vue-html-form": {
+        "scope": "vue-html",
+        "prefix": "form-prevent",
+        "body": [
+            "<form @submit.prevent=\"${1:submitMethod}\">",
+            "\t$0",
+            "</form>"
+        ],
+        "description": "<form @submit.prevent>"
+    },
+    "vue-html-transition": {
+        "scope": "vue-html",
+        "prefix": "transition",
+        "body": [
+            "<transition :name=\"$0\"></transition>",
+        ],
+        "description": "<transition>"
+    },
+}

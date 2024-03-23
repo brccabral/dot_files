@@ -129,4 +129,4 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 # https://github.com/atuinsh/atuin
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"

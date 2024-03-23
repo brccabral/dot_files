@@ -1,3 +1,6 @@
+# original file at /etc/nanorc, copy it to $HOME/.nanorc and make the editions
+# deb file has a problem, it has some `'' main` commands, but the arch file does not have it
+
 ## Sample initialization file for GNU nano.
 ##
 ## For the options that take parameters, the default value is shown.
@@ -287,9 +290,7 @@ include "/usr/share/nano/*.nanorc"
 ## For quickly uppercasing or lowercasing the word under or after the cursor.
 ## (These effectively select a word and pipe it through a sed command.)
 # bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'
-" main
 # bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'
-" main
 
 ## For copying a marked region to the system clipboard:
 # bind Sh-M-T "{execute}|xsel -ib{enter}{undo}" main
@@ -297,8 +298,7 @@ include "/usr/share/nano/*.nanorc"
 ## For snipping trailing blanks when you save a file:
 # bind ^S "{execute}| sed 's/\s\+$//' {enter}{savefile}" main
 # bind Sh-M-T "|xsel -ib
-u" main
-
+
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:

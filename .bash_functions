@@ -107,8 +107,25 @@ function dhealth() {
         echo "Need a docker ID or Name"
         return 1
     fi
-    container_search=$1
-    docker container ls $all_flag --format "{{.ID}} {{.Names}}" | awk "/^${container_search}| ${container_search}/ {print \$1}" | while read -r container_id; do
+    docker container ls $all_flag --format "{{.ID}} {{.Names}}" | awk "/^${1}| ${1}/ {print \$1}" | while read -r container_id; do
         docker inspect -f '{{json .State.Health}}' "$container_id" | jq
     done
+}
+
+function dlogsize() {
+    _print_log_size() {
+        sudo du -h $(docker inspect --format='{{.LogPath}}' $1)
+    }
+
+    if [ -z "${1}" ]; then
+        # if ${1} is empty, print all containers
+        docker ps -q | while read -r container_id; do
+            _print_log_size "$container_id"
+        done
+    else
+        # print all containers that ID or Name starts with ${1}
+        docker container ls $all_flag --format "{{.ID}} {{.Names}}" | awk "/^${1}| ${1}/ {print \$1}" | while read -r container_id; do
+            _print_log_size "$container_id"
+        done
+    fi
 }

@@ -129,3 +129,10 @@ function dlogsize() {
         done
     fi
 }
+
+function try_install() {
+    dpkg -l "$1" | grep -q ^ii && return 1
+    sudo apt install "$@"
+    return 0
+}
+

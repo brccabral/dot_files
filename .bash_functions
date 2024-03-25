@@ -100,3 +100,15 @@ function dlogs() {
         docker logs -fn $1 $2
     fi
 }
+
+# prints previous healthcheck messages
+function dhealth() {
+    if [ -z $1 ]; then
+        echo "Need a docker ID or Name"
+        return 1
+    fi
+    container_search=$1
+    docker container ls $all_flag --format "{{.ID}} {{.Names}}" | awk "/^${container_search}| ${container_search}/ {print \$1}" | while read -r container_id; do
+        docker inspect -f '{{json .State.Health}}' "$container_id" | jq
+    done
+}

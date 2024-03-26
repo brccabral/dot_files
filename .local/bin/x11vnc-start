@@ -1,0 +1,4 @@
+#!/bin/sh
+myip=$(hostname -I | awk '{ print $1 }')
+ssh -L $myip:59000:$myip:5900 -C -N -l $(whoami) $myip -f
+x11vnc -forever -shared -display :1 -rfbauth $HOME/.vnc/passwd -auth $HOME/.Xauthority

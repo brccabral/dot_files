@@ -4,10 +4,10 @@ alias ll='ls -alF'
 alias la='ls -Alh'
 alias l='ls -CF'
 alias lm='ls -alh |more' # pipe through 'more'
-alias lsize='ls -lSrh' # sort by size
-alias ltime='ls -lcrh' # sort by change time
+alias lsize='ls -lSrh'   # sort by size
+alias ltime='ls -lcrh'   # sort by change time
 alias laccess='ls -lurh' # sort by access time
-alias labc='ls -lap' #alphabetical sort
+alias labc='ls -lap'     #alphabetical sort
 
 alias dir='dir --hyperlink=auto --color=auto'
 alias vdir='vdir --hyperlink=auto --color=auto'
@@ -50,3 +50,8 @@ alias hg="history|grep"
 alias mkdir_r="mkdir -pv"
 
 alias catn="cat -n"
+
+# ^# = starts with #
+# ^$ = blank lines
+# -v = reverse
+alias uncommented='grep -v -e "^#" -e "^$"'

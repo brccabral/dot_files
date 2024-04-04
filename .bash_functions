@@ -136,3 +136,13 @@ function try_install() {
     return 0
 }
 
+function find_text_in_files() {
+    if [ -z "${1}" ]; then
+        return 1
+    fi
+    filter_extensions=""
+    if [ -z "${2}" ]; then
+        filter_extensions="--include=\*.{$2}"
+    fi
+    grep -rnw . -e "$1" ${filter_extensions} --exclude-dir={vcpkg,.venv,build_win,build_dir,install_win,install_dir,build,install}
+}

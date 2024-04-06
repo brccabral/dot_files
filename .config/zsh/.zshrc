@@ -1,3 +1,8 @@
+# MAKE SURE YOU SET THIS
+# sudo nano /etc/zsh/zshenv
+# add this line at the end of the file
+# export ZDOTDIR="$HOME"/.config/zsh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -85,6 +90,8 @@ source $HOME/.oh-my-zsh/custom/plugins/dracula-zsh-syntax-highlighting/zsh-synta
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+# oh-my-zsh creates many files .zcompdump in $HOME, hide it inside ~/.oh-my-zsh/
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST-$ZSH_VERSION
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -125,7 +132,7 @@ if [ -f ~/.bash_exports ]; then
 fi
 
 if [ -f ~/.bash_functions ]; then
-    . ~/./.bash_functions
+    . ~/.bash_functions
 fi
 
 # https://github.com/atuinsh/atuin

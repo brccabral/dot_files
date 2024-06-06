@@ -4,10 +4,10 @@ alias ll='ls -alF'
 alias la='ls -Alh'
 alias l='ls -CF'
 alias lm='ls -alh |more' # pipe through 'more'
-alias lsize='ls -lSrh'   # sort by size
-alias ltime='ls -lcrh'   # sort by change time
+alias lsize='ls -lSrh' # sort by size
+alias ltime='ls -lcrh' # sort by change time
 alias laccess='ls -lurh' # sort by access time
-alias labc='ls -lap'     #alphabetical sort
+alias labc='ls -lap' # alphabetical sort
 
 alias dir='dir --hyperlink=auto --color=auto'
 alias vdir='vdir --hyperlink=auto --color=auto'
@@ -19,9 +19,9 @@ alias egrep='egrep --color=auto'
 #alias lc='colorls -lA --sd'
 
 #alias git-cola='QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=qt5ct git-cola'
-alias git-cola='QT_QPA_PLATFORMTHEME=qt5ct git-cola'
+# alias git-cola='QT_QPA_PLATFORMTHEME=qt5ct git-cola'
 alias qt5ct='QT_QPA_PLATFORMTHEME=qt5ct qt5ct'
-alias bauh='QT_QPA_PLATFORMTHEME=qt5ct bauh'
+# alias bauh='QT_QPA_PLATFORMTHEME=qt5ct bauh'
 # alias kdevelop='QT_QPA_PLATFORMTHEME=qt5ct kdevelop'
 alias kdevelop='XCURSOR_SIZE=24 kdevelop'
 
@@ -55,3 +55,6 @@ alias catn="cat -n"
 # ^$ = blank lines
 # -v = reverse
 alias uncommented='grep -v -e "^#" -e "^$"'
+
+alias pcode='stat -c "%a %n"'
+

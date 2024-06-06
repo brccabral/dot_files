@@ -117,8 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 if [ -f ~/.bash_functions ]; then
-    . ~/./.bash_functions
+    . ~/.bash_functions
 fi
 
 # https://github.com/atuinsh/atuin
-eval "$(atuin init bash)"
+eval "$(atuin init bash --disable-up-arrow)"
+

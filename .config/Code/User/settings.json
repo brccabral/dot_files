@@ -1,29 +1,70 @@
 // Global settings
 {
-    "C_Cpp.intelliSenseCacheSize": 2048,
-    "C_Cpp.intelliSenseCachePath": "/media/username/Data/CPP_Projects/.vscode_linux/.cache",
-    "C_Cpp.default.browse.databaseFilename": "/media/username/Data/CPP_Projects/.vscode_linux/.browse.VC.db",
+    // Blade Formatter
+    "bladeFormatter.format.indentSize": 2,
+    "bladeFormatter.format.noMultipleEmptyLines": true,
+    "bladeFormatter.misc.dontShowNewVersionMessage": true,
+    // C/C++ Microsoft
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.default.browse.databaseFilename": "/tmp/vscode/.browse.VC.db",
     "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.intelliSenseCachePath": "/tmp/vscode/.cache",
+    "C_Cpp.intelliSenseUpdateDelay": 3000,
+    "C_Cpp.workspaceParsingPriority": "low",
     // Windows
     // "C_Cpp.intelliSenseCachePath": "D:\\CPP_Projects\\.cache",
-
-    "cmake.buildDirectory": "${workspaceFolder}/build_dir",
-    "cmake.configureArgs": [
-        "-DCMAKE_INSTALL_PREFIX=../install_dir"
+    // C/C++ Advanced Lint
+    "c-cpp-flylint.clang.enable": false,
+    "c-cpp-flylint.flawfinder.enable": false,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.lizard.enable": false,
+    "c-cpp-flylint.cppcheck.extraArgs": [
+        "--quiet",
+        "--force",
+        "--enable=all",
+        // "-I",
+        // "\"C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\""
     ],
+    // CMake Tools Microsoft
+    "cmake.buildDirectory": "${workspaceFolder}/build_dir",
+    // "cmake.buildDirectory": "${workspaceFolder}/build_win",
+    "cmake.automaticReconfigure": false,
+    "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
     "cmake.debugConfig": {
-        "cwd": "${workspaceFolder}/build_dir"
+        // "cwd": "${workspaceFolder}/out/build/linux-debug/code"
+        "cwd": "${workspaceFolder}/build_dir",
+        // "cwd": "${workspaceFolder}/build",
+        // "cwd": "${workspaceFolder}/build_win",
     },
+    "cmake.emscriptenSearchDirs": [
+        "/mnt/Data/CPP_Projects/emsdk_linux"
+        // "D:\\CPP_Projects\\emsdk_win"
+    ],
+    // "cmake.generator": "Unix Makefiles", // Default is Ninja
+    "cmake.installPrefix": "${workspaceFolder}/install_dir",
+    // "cmake.installPrefix": "${workspaceFolder}/install_win",
+    "cmake.launchBehavior": "newTerminal",
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.parallelJobs": 12,
     "cmake.setBuildTypeOnMultiConfig": true,
-
+    "cmake.showConfigureWithDebuggerNotification": false,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.useCMakePresets": "auto",
+    // cmake-format
+    "cmakeFormat.exePath": ".venv/bin/cmake-format",
+    // "cmakeFormat.exePath": "venv\\Scripts\\cmake-format.exe",
+    // VSCode
     "debug.onTaskErrors": "showErrors",
-    
     "diffEditor.ignoreTrimWhitespace": false,
-    
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": true,
+    // VSCode
+    "editor.autoClosingBrackets": "always",
+    "editor.detectIndentation": false,
     "editor.fontFamily": "JetBrains Mono NL",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.minimap.enabled": true,
     "editor.suggestSelection": "first",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -41,13 +82,59 @@
                     "fontStyle": "bold"
                 }
             }
-        ]
+        ],
+        "[Agila Oceanic Next]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "meta.attribute.python",
+                        "meta.member.access.python"
+                    ],
+                    "settings": {
+                        "foreground": "#BB80B3",
+                        "fontStyle": "italic bold"
+                    }
+                },
+            ]
+        },
+        "[Dracula]": {
+            "textMateRules": [
+                {
+                    "scope": "entity.name.namespace",
+                    "settings": {
+                        "foreground": "#8BE9FD",
+                        "fontStyle": "italic bold"
+                    }
+                },
+                {
+                    "scope": "variable.other.property",
+                    "settings": {
+                        "foreground": "#50FA7B",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.readwrite",
+                    "settings": {
+                        "foreground": "#F8F8F2",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#50FA7B",
+                        "fontStyle": "italic"
+                    }
+                },
+            ],
+        }
     },
-    
+    // VSCode
     "explorer.autoReveal": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    
+    // VSCode
     "files.autoSave": "afterDelay",
     //"files.encoding": "iso88591",
     "files.associations": {
@@ -57,61 +144,251 @@
         "*.aev": "xml",
         "*.make": "makefile"
     },
-    
+    // Flake8 Microsoft
+    "flake8.args": [
+        "--ignore=E501,E203,W503,W504,E743,E741",
+        "--extend-exclude",
+        "**/vendor/**",
+    ],
+    // Format Files jbockle
     "formatFiles.excludedFolders": [
         "node_modules",
         ".vscode",
         ".git",
         "dist",
         ".chrome",
-        "log4php"
+        "log4php",
+        "venv",
+        ".venv",
+        "vendor",
+        "scriptaculous"
     ],
-    
+    "formatFiles.excludePattern": "**/jquery*,**/vendor/**,**/scriptaculous/**",
+    "formatFiles.logLevel": "info",
+    // VSCode
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "git.defaultBranchName": "master",
     "git.openRepositoryInParentFolders": "always",
-    
-    "intelephense.environment.phpVersion": "8.1.7",
+    // GitLens
+    "gitlens.advanced.messages": {
+        "suppressNoRepositoryWarning": true
+    },
+    // PHP Intelephense
+    "intelephense.environment.phpVersion": "8.2",
     "intelephense.format.braces": "allman",
-    
+    "intelephense.stubs": [
+        "apache",
+        "bcmath",
+        "bz2",
+        "calendar",
+        "com_dotnet",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dba",
+        "dom",
+        "enchant",
+        "exif",
+        "FFI",
+        "fileinfo",
+        "filter",
+        "fpm",
+        "ftp",
+        "gd",
+        "gettext",
+        "gmp",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "ldap",
+        "libxml",
+        "mbstring",
+        "meta",
+        "mysqli",
+        "oci8",
+        "odbc",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_ibm",
+        "pdo_mysql",
+        "pdo_pgsql",
+        "pdo_sqlite",
+        "pgsql",
+        "Phar",
+        "posix",
+        "pspell",
+        "random",
+        "readline",
+        "Reflection",
+        "session",
+        "shmop",
+        "SimpleXML",
+        "snmp",
+        "soap",
+        "sockets",
+        "sodium",
+        "SPL",
+        "sqlite3",
+        "standard",
+        "superglobals",
+        "sysvmsg",
+        "sysvsem",
+        "sysvshm",
+        "tidy",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlrpc",
+        "xmlwriter",
+        "xsl",
+        "Zend OPcache",
+        "zip",
+        "zlib",
+        "win32service",
+        "sqlsrv",
+        "ssh2"
+    ],
+    // VSCode
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // Jupyter Microsoft
     "jupyter.askForKernelRestart": false,
     "jupyter.interactiveWindow.creationMode": "perFile",
-    
+    // Live Server
+    "liveServer.settings.ignoreFiles": [
+        "README.md",
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ],
+    "liveServer.settings.wait": 500,
+    "liveServer.settings.donotShowInfoMsg": true,
+    // Makefile Tools Microsoft
+    "makefile.dryrunSwitches": [],
+    "makefile.configureOnOpen": false,
+    // VSCode
+    "php.validate.executablePath": "/usr/bin/php",
     // "php.validate.executablePath": "C:\\Users\\Username\\Documents\\php-8.1.7-Win32-vs16-x64\\php.exe",
-    
+    // Prettier
+    "prettier.bracketSameLine": true,
+    "prettier.endOfLine": "auto",
+    "prettier.tabWidth": 4,
+    // Python Microsoft
     "python.analysis.autoImportCompletions": true,
     "python.analysis.diagnosticMode": "workspace",
-    "python.formatting.provider": "black",
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--ignore",
-        "E501,E203,W503,W504"
-    ],
-    "python.linting.ignorePatterns": [
+    "python.analysis.ignore": [
+        "**/vendor/**",
         "**/site-packages/**/*.py",
         ".vscode/*.py",
         "**/Lib/**/*.py",
         "**/venv/**/*.py",
         "**/.venv/*.py"
     ],
+    "python.analysis.typeCheckingMode": "basic",
+    // "python.linting.banditEnabled": true,
     "python.terminal.executeInFileDir": true,
-    
+    // XML Red Hat
     // "redhat.telemetry.enabled": false,
-    
+    // VSCode
+    "scm.countBadge": "focused",
+    // VSCode
     "telemetry.telemetryLevel": "off",
-    
+    // VSCode
     "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono",
     // Windows
     // "terminal.integrated.fontFamily": "CaskaydiaCove NF",
     // "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    
+    // MinGW
+    // "terminal.integrated.profiles.windows": {
+    //   "mingw64": {
+    //     "path": "D:\\msys64\\usr\\bin\\bash.exe",
+    //     "args": [
+    //         "--login",
+    //         "-i"
+    //     ]
+    //   }
+    // },
+    // "terminal.integrated.defaultProfile.windows": "mingw64",
+    // "terminal.integrated.env.windows": {
+    //     "CHERE_INVOKING": "1",
+    //     "MSYSTEM": "MINGW64"
+    // },
     // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    
+    // Theme by language
+    "theme-by-language.themes": {
+        // "python": "Dracula",
+        // "jsonc": "Dracula",
+        // "*": "Default Dark Modern"
+        // "python": "Agila Oceanic Next",
+        // "jsonc": "Agila Oceanic Next",
+        // "*": "Agila Oceanic Next"
+    },
+    // Todo Tree
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text",
+        "foreground": "#F48701",
+        "rulerColour": "#F48701",
+        "rulerLane": "none"
+    },
+    // VSCode
     "window.commandCenter": true,
     "window.menuBarVisibility": "compact",
-    
+    // "window.zoomLevel": 1,
+    // VSCode
+    "workbench.colorTheme": "Default Dark Modern",
+    // "workbench.colorTheme": "Agila Oceanic Next",
     "workbench.editor.enablePreview": false,
-    "workbench.colorTheme": "Default Dark+ Experimental",
     "workbench.startupEditor": "none",
+    // YAML
+    "yaml.schemas": {
+        "Kubernetes": "*.yaml"
+    },
+    // VSCode
+    "[blade]": {
+        "editor.tabSize": 2
+    },
+    "[cmake]": {
+        "editor.defaultFormatter": "cheshirekow.cmake-format"
+    },
+    "[css]": {
+        // "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[dockercompose]": {
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "[github-actions-workflow]": {
+        "editor.tabSize": 2
+    },
+    "git.replaceTagsWhenPull": true,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
 }

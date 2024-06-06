@@ -1,6 +1,6 @@
 {
     // <script>
-    "vue-script-data-init": {
+    "vue:<script> data() { return{}; },": {
         "scope": "vue",
         "prefix": "script-data",
         "body": [
@@ -14,9 +14,37 @@
             "};",
             "</script>"
         ],
-        "description": "<script> data()"
+        "description": "<script> data() { return{}; },"
     },
-    "vue-script-data": {
+    "vue:<script> setup( return {}; ),": {
+        "scope": "vue",
+        "prefix": "setup-init",
+        "body": [
+            "<script>",
+            "export default {",
+            "\tsetup() {",
+            "\t\t$0",
+            "\t\treturn {",
+            "\t\t};",
+            "\t},",
+            "};",
+            "</script>"
+        ],
+        "description": "<script> setup( return {}; ),"
+    },
+    "vue:setup() { return {}; },": {
+        "scope": "javascript",
+        "prefix": "setup",
+        "body": [
+            "setup() {",
+            "\t$0",
+            "\treturn {",
+            "\t};",
+            "},",
+        ],
+        "description": "setup() { return {}; },"
+    },
+    "vue:data() { return {}; },": {
         "scope": "javascript",
         "prefix": "data",
         "body": [
@@ -26,9 +54,9 @@
             "\t};",
             "},",
         ],
-        "description": "data()"
+        "description": "data() { return {}; }"
     },
-    "vue-script-methods": {
+    "vue:methods: { someMethod() {}, },": {
         "scope": "javascript",
         "prefix": "methods",
         "body": [
@@ -38,9 +66,9 @@
             "\t},",
             "},",
         ],
-        "description": "methods: {}"
+        "description": "methods: { someMethod() {}, },"
     },
-    "vue-script-computed": {
+    "vue:computed: { someMethod() {}, },": {
         "scope": "javascript",
         "prefix": "computed",
         "body": [
@@ -50,9 +78,29 @@
             "\t},",
             "},",
         ],
-        "description": "computed: {}"
+        "description": "computed: { someMethod() {}, },"
     },
-    "vue-script-mutations": {
+    "vue:const variable = computed( ()=>{} );": {
+        "scope": "javascript",
+        "prefix": "computed",
+        "body": [
+            "const ${1:variable} = computed(function () {",
+            "\treturn $0;",
+            "});",
+        ],
+        "description": "const variable = computed();"
+    },
+    "vue:watch(variables, function(new,old){} );": {
+        "scope": "javascript",
+        "prefix": "watch",
+        "body": [
+            "watch(${1:variables}, function (${2:newValues}, ${3:oldValues}) {",
+            "\t$0",
+            "});",
+        ],
+        "description": "watch(variables, function(new,old){});"
+    },
+    "vue:mutations: { someMethod(state, payload) },": {
         "scope": "javascript",
         "prefix": "mutations",
         "body": [
@@ -62,9 +110,9 @@
             "\t},",
             "},",
         ],
-        "description": "mutations: {}"
+        "description": "mutations: {},"
     },
-    "vue-script-actions": {
+    "vue:actions: { someMethod(state, payload) },": {
         "scope": "javascript",
         "prefix": "actions",
         "body": [
@@ -74,9 +122,9 @@
             "\t},",
             "},",
         ],
-        "description": "actions: {}"
+        "description": "actions: {},"
     },
-    "vue-script-getters": {
+    "vue:getters: { someMethod(state, getters) {} },": {
         "scope": "javascript",
         "prefix": "getters",
         "body": [
@@ -86,9 +134,9 @@
             "\t},",
             "},",
         ],
-        "description": "getters: {}"
+        "description": "getters: {},"
     },
-    "vue-script-components": {
+    "vue:components: {},": {
         "scope": "javascript",
         "prefix": "components",
         "body": [
@@ -96,7 +144,7 @@
         ],
         "description": "components: {},"
     },
-    "vue-script-props-simple": {
+    "vue:props: [],": {
         "scope": "javascript",
         "prefix": "props-simple",
         "body": [
@@ -104,7 +152,7 @@
         ],
         "description": "props: [],"
     },
-    "vue-script-inject-simple": {
+    "vue:inject: [],": {
         "scope": "javascript",
         "prefix": "inject-simple",
         "body": [
@@ -112,7 +160,23 @@
         ],
         "description": "inject: [],"
     },
-    "vue-script-emits-simple": {
+    "vue:const value = inject(key)": {
+        "scope": "javascript",
+        "prefix": "inject-setup",
+        "body": [
+            "const ${1:name} = inject(${2:key});$0",
+        ],
+        "description": "const value = inject(key)"
+    },
+    "vue:provide(key, value)": {
+        "scope": "javascript",
+        "prefix": "provide-setup",
+        "body": [
+            "provide(${1:key}, ${2:value});",
+        ],
+        "description": "provide(key, value)"
+    },
+    "vue:emits: [],": {
         "scope": "javascript",
         "prefix": "emits-simple",
         "body": [
@@ -120,7 +184,7 @@
         ],
         "description": "emits: [],"
     },
-    "vue-script-components-simple": {
+    "vue:components: [],": {
         "scope": "javascript",
         "prefix": "components-simple",
         "body": [
@@ -129,7 +193,7 @@
         "description": "components: [],"
     },
     // Vue.js
-    "vue-router-init": {
+    "vue:import vue-router; createRouter; export; app.use;": {
         "scope": "javascript",
         "prefix": "router-init",
         "body": [
@@ -147,7 +211,7 @@
         ],
         "description": "router init"
     },
-    "vue-router-import": {
+    "vue:import; app.use;": {
         "scope": "javascript",
         "prefix": "router-import",
         "body": [
@@ -156,7 +220,7 @@
         ],
         "description": "import router"
     },
-    "vue-vuex-init": {
+    "vue:import vuex; createStore; app.use;": {
         "scope": "javascript",
         "prefix": "store-createStore-init",
         "body": [
@@ -172,7 +236,7 @@
         ],
         "description": "createStore { state() } app.use"
     },
-    "vue-vuex-modules": {
+    "vue:import vuex; module{}; createStore(); app.use;": {
         "scope": "javascript",
         "prefix": "store-modules-init",
         "body": [
@@ -183,7 +247,7 @@
         ],
         "description": "createStore module app.use"
     },
-    "vue-vuex-create": {
+    "vue:import vuex; import module; createStore(); export;": {
         "scope": "javascript",
         "prefix": "store-create-export",
         "body": [
@@ -198,7 +262,7 @@
         ],
         "description": "createStore export"
     },
-    "vue-vuex-store-module": {
+    "vue:module { state(), mutations, getters, actions, };": {
         "scope": "javascript",
         "prefix": "store-module",
         "body": [
@@ -212,7 +276,7 @@
         "description": "store-module = {}"
     },
     // HTML
-    "vue-html-router-link": {
+    "vue:<router-link to=\"page\"></router-link>": {
         "scope": "vue-html",
         "prefix": "router-link",
         "body": [
@@ -220,7 +284,7 @@
         ],
         "description": "<router-link>"
     },
-    "vue-html-router-view": {
+    "vue:<router-view></router-view>": {
         "scope": "vue-html",
         "prefix": "router-view",
         "body": [
@@ -228,7 +292,7 @@
         ],
         "description": "<router-view>"
     },
-    "vue-html-keep-alive": {
+    "vue:<keep-alive></keep-alive>": {
         "scope": "vue-html",
         "prefix": "keep-alive",
         "body": [
@@ -236,7 +300,7 @@
         ],
         "description": "<keep-alive>"
     },
-    "vue-html-slot": {
+    "vue:<slot name=\"\"></slot>": {
         "scope": "vue-html",
         "prefix": "slot",
         "body": [
@@ -244,15 +308,15 @@
         ],
         "description": "<slot>"
     },
-    "vue-html-template": {
+    "vue:<template #slotName></template>": {
         "scope": "vue-html",
         "prefix": "template",
         "body": [
-            "<template ${1:#namedScope}>\n\t$0\n</template>",
+            "<template ${1:#slotName}>\n\t$0\n</template>",
         ],
         "description": "<template>"
     },
-    "vue-html-component": {
+    "vue:<component :is=\"\"></component>": {
         "scope": "vue-html",
         "prefix": "component",
         "body": [
@@ -260,7 +324,7 @@
         ],
         "description": "<component>"
     },
-    "vue-html-teleport": {
+    "vue:<teleport to=\"\"></teleport>": {
         "scope": "vue-html",
         "prefix": "teleport",
         "body": [
@@ -268,7 +332,7 @@
         ],
         "description": "<teleport>"
     },
-    "vue-html-form": {
+    "vue:<form @submit.prevent=\"submitMethod\">": {
         "scope": "vue-html",
         "prefix": "form-prevent",
         "body": [
@@ -278,7 +342,7 @@
         ],
         "description": "<form @submit.prevent>"
     },
-    "vue-html-transition": {
+    "vue:<transition :name=\"\"></transition>": {
         "scope": "vue-html",
         "prefix": "transition",
         "body": [

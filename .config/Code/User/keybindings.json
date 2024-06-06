@@ -1,14 +1,15 @@
+// windows %APPDATA%\VSCodium\User\keybindings.json
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "ctrl+alt+d",
-        "command": "workbench.view.debug",
+        "key": "",
+        "command": "-workbench.view.debug",
         "when": "viewContainer.workbench.view.debug.enabled"
     },
     {
-        "key": "ctrl+shift+d",
-        "command": "-workbench.view.debug",
-        "when": "viewContainer.workbench.view.debug.enabled"
+        "key": "",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+shift+d",
@@ -16,9 +17,9 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
+        "key": "",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+d",
@@ -27,23 +28,23 @@
     },
     {
         "key": "shift+alt+down",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+down",
         "command": "cursorColumnSelectDown",
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+shift+alt+down",
+        "key": "",
         "command": "-cursorColumnSelectDown",
         "when": "textInputFocus"
     },
     {
-        "key": "shift+alt+up",
+        "key": "",
         "command": "-editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "",
+        "command": "-cursorColumnSelectUp",
+        "when": "textInputFocus"
     },
     {
         "key": "shift+alt+up",
@@ -51,8 +52,8 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+shift+alt+up",
-        "command": "-cursorColumnSelectUp",
+        "key": "ctrl+alt+pageUp",
+        "command": "editor.action.selectToBracket",
         "when": "textInputFocus"
-    }
+    },
 ]

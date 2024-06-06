@@ -25,7 +25,7 @@ class TkinterApp:
         screen_width = self.root.winfo_screenwidth()
         screen_height = self.root.winfo_screenheight()
         self.root.geometry(
-            f"{self.width}x{self.height}+{screen_width//2-self.width//2}+{screen_height//2-self.height//2}"
+            f"{self.width}x{self.height}+{screen_width // 2 - self.width // 2}+{screen_height // 2 - self.height // 2}"
         )
 
 

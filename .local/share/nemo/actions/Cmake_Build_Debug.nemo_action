@@ -1,0 +1,9 @@
+[Nemo Action]
+
+Name=Cmake Build Debug
+Comment=Run cmake with debug config
+Exec=cmake_build_debug.sh "%P"
+Selection=s
+Extensions=txt;
+Dependencies=cmake
+Terminal=true

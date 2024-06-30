@@ -1,0 +1,9 @@
+[Nemo Action]
+
+Name=Make Executable
+Comment=Make a file executable (chmod +x)
+Exec=chmod +x "%F"
+Selection=s
+Extensions=none;sh;
+Dependencies=chmod
+Terminal=false

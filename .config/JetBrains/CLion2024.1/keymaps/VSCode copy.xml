@@ -1,0 +1,28 @@
+<keymap version="1" name="VSCode copy" parent="VSCode">
+  <action id="$Paste">
+    <keyboard-shortcut first-keystroke="shift insert" />
+  </action>
+  <action id="ActivateDebugToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl y" />
+  </action>
+  <action id="CppGenerateDefinitions">
+    <keyboard-shortcut first-keystroke="alt d" />
+  </action>
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
+  <action id="EditorPasteSimple">
+    <keyboard-shortcut first-keystroke="ctrl v" />
+  </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="ctrl alt l" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="Terminal.CloseSession" />
+  <action id="Terminal.Paste">
+    <keyboard-shortcut first-keystroke="shift ctrl v" />
+  </action>
+  <action id="TextEditorWithPreview.Layout.PreviewOnly" />
+</keymap>

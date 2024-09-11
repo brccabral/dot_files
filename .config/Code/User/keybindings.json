@@ -1,4 +1,5 @@
 // windows %APPDATA%\VSCodium\User\keybindings.json
+// linux $HOME/.config/Code/User/keybidings.json
 // Place your key bindings in this file to override the defaults
 [
     {
@@ -7,19 +8,9 @@
         "when": "viewContainer.workbench.view.debug.enabled"
     },
     {
-        "key": "",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
         "key": "ctrl+shift+d",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
-    },
-    {
-        "key": "",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+d",
@@ -33,18 +24,8 @@
     },
     {
         "key": "",
-        "command": "-cursorColumnSelectDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "",
         "command": "-editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "",
-        "command": "-cursorColumnSelectUp",
-        "when": "textInputFocus"
     },
     {
         "key": "shift+alt+up",
@@ -52,8 +33,13 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+alt+pageUp",
-        "command": "editor.action.selectToBracket",
-        "when": "textInputFocus"
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
     },
 ]

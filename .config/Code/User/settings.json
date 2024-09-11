@@ -1,19 +1,23 @@
 // Global settings
 {
-    // Blade Formatter
+    // Atari Dev Studio
+    "atari-dev-studio.application.configuration.latestVersion": "0.9.6",
+    "atari-dev-studio.application.configuration.showNewVersionMessage": false,
+    // Blade Formatter - Laravel
     "bladeFormatter.format.indentSize": 2,
     "bladeFormatter.format.noMultipleEmptyLines": true,
     "bladeFormatter.misc.dontShowNewVersionMessage": true,
     // C/C++ Microsoft
+    "C_Cpp.autocompleteAddParentheses": true,
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-    "C_Cpp.default.browse.databaseFilename": "/tmp/vscode/.browse.VC.db",
+    "C_Cpp.default.browse.databaseFilename": "/mnt/HDExtra/cache/.vscode/${workspaceFolderBasename}/.browse.VC.db",
+    // "C_Cpp.default.browse.databaseFilename": "D:\\CPP_Projects\\.cache\\.vscode\\${workspaceFolderBasename}\\.browse.VC.db", // Windows
     "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
     "C_Cpp.default.cppStandard": "c++20",
-    "C_Cpp.intelliSenseCachePath": "/tmp/vscode/.cache",
+    "C_Cpp.intelliSenseCachePath": "/mnt/HDExtra/cache/.vscode/${workspaceFolderBasename}",
+    // "C_Cpp.intelliSenseCachePath": "D:\\CPP_Projects\\.cache\\.vscode\\${workspaceFolderBasename}", // Windows
     "C_Cpp.intelliSenseUpdateDelay": 3000,
     "C_Cpp.workspaceParsingPriority": "low",
-    // Windows
-    // "C_Cpp.intelliSenseCachePath": "D:\\CPP_Projects\\.cache",
     // C/C++ Advanced Lint
     "c-cpp-flylint.clang.enable": false,
     "c-cpp-flylint.flawfinder.enable": false,
@@ -27,9 +31,9 @@
         // "\"C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\""
     ],
     // CMake Tools Microsoft
+    "cmake.automaticReconfigure": false,
     "cmake.buildDirectory": "${workspaceFolder}/build_dir",
     // "cmake.buildDirectory": "${workspaceFolder}/build_win",
-    "cmake.automaticReconfigure": false,
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
     "cmake.debugConfig": {
@@ -48,6 +52,10 @@
     "cmake.launchBehavior": "newTerminal",
     "cmake.options.statusBarVisibility": "visible",
     "cmake.parallelJobs": 12,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
     "cmake.setBuildTypeOnMultiConfig": true,
     "cmake.showConfigureWithDebuggerNotification": false,
     "cmake.showOptionsMovedNotification": false,
@@ -57,14 +65,15 @@
     // "cmakeFormat.exePath": "venv\\Scripts\\cmake-format.exe",
     // VSCode
     "debug.onTaskErrors": "showErrors",
+    // VSCode
     "diffEditor.ignoreTrimWhitespace": false,
     // VSCode
+    "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "always",
     "editor.detectIndentation": false,
     "editor.fontFamily": "JetBrains Mono NL",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.minimap.enabled": true,
     "editor.suggestSelection": "first",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -130,6 +139,7 @@
             ],
         }
     },
+    "editor.wordWrapColumn": 100,
     // VSCode
     "explorer.autoReveal": false,
     "explorer.confirmDragAndDrop": false,
@@ -171,10 +181,12 @@
     "git.confirmSync": false,
     "git.defaultBranchName": "master",
     "git.openRepositoryInParentFolders": "always",
+    "git.replaceTagsWhenPull": true,
     // GitLens
     "gitlens.advanced.messages": {
         "suppressNoRepositoryWarning": true
     },
+    "gitlens.launchpad.indicator.enabled": false,
     // PHP Intelephense
     "intelephense.environment.phpVersion": "8.2",
     "intelephense.format.braces": "allman",
@@ -273,7 +285,7 @@
     // Makefile Tools Microsoft
     "makefile.dryrunSwitches": [],
     "makefile.configureOnOpen": false,
-    // VSCode
+    // PHP
     "php.validate.executablePath": "/usr/bin/php",
     // "php.validate.executablePath": "C:\\Users\\Username\\Documents\\php-8.1.7-Win32-vs16-x64\\php.exe",
     // Prettier
@@ -282,6 +294,7 @@
     "prettier.tabWidth": 4,
     // Python Microsoft
     "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
     "python.analysis.diagnosticMode": "workspace",
     "python.analysis.ignore": [
         "**/vendor/**",
@@ -322,14 +335,10 @@
     // },
     // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     // Theme by language
-    "theme-by-language.themes": {
-        // "python": "Dracula",
-        // "jsonc": "Dracula",
-        // "*": "Default Dark Modern"
-        // "python": "Agila Oceanic Next",
-        // "jsonc": "Agila Oceanic Next",
-        // "*": "Agila Oceanic Next"
-    },
+    // "theme-by-language.themes": {
+    //     "*": "Default Dark Modern",
+    //     "python": "One Monokai Python"
+    // },
     // Todo Tree
     "todo-tree.highlights.defaultHighlight": {
         "type": "text",
@@ -386,9 +395,5 @@
     "[github-actions-workflow]": {
         "editor.tabSize": 2
     },
-    "git.replaceTagsWhenPull": true,
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
+    "diffEditor.hideUnchangedRegions.enabled": true,
 }

@@ -18,7 +18,7 @@ export QT_QPA_PLATFORMTHEME=
 export QT_QPA_PLATFORM=
 if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
     export QT_QPA_PLATFORMTHEME=qt5ct
-    export QT_QPA_PLATFORM=wayland
+    export QT_QPA_PLATFORM="wayland;xcb"
 fi
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

@@ -34,3 +34,5 @@ export DEBGET_CACHE_RTN=1
 # export RAYLIB_INSTALL_PATH=/mnt/HDExtra/GithubProjects/raylib_emscripten/install_dir
 
 export ANDROID_NDK=/mnt/Data/Android/android-ndk-r27
+
+export UV_CACHE_DIR=/opt/uv/cache

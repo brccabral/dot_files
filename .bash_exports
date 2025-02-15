@@ -32,3 +32,5 @@ export DEBGET_CACHE_RTN=1
 
 # export RAYLIB_SRC_PATH=/mnt/HDExtra/GithubProjects/raylib_emscripten/src
 # export RAYLIB_INSTALL_PATH=/mnt/HDExtra/GithubProjects/raylib_emscripten/install_dir
+
+export ANDROID_NDK=/mnt/Data/Android/android-ndk-r27

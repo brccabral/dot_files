@@ -146,3 +146,7 @@ function find_text_in_files() {
     fi
     grep -rnw . -e "$1" ${filter_extensions} --exclude-dir={vcpkg,.venv,build_win,build_dir,install_win,install_dir,build,install}
 }
+
+function uv_update() {
+    uv tool list | grep ' v' | awk '{print $1}' | xargs uv tool update
+}

@@ -1,0 +1,15 @@
+[user]
+	email = 
+	name = Bruno Cabral
+[cola]
+	theme = flat-dark-grey
+	icontheme = dark
+	startupmode = folder
+[init]
+	defaultBranch = master
+[gui]
+	editor = nano
+[alias]
+	c1 = clone --depth 1
+[color]
+	ui = auto

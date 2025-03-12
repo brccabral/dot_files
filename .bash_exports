@@ -38,3 +38,7 @@ export ANDROID_NDK=/mnt/Data/Android/android-ndk-r27
 # symlink enables cache from different partition
 export UV_CACHE_DIR=/opt/uv/cache
 export UV_LINK_MODE=symlink
+
+export OLLAMA_HOST=http://0.0.0.0:11434
+export OLLAMA_MODELS=/mnt/HDExtra/ollama/.ollama/models
+

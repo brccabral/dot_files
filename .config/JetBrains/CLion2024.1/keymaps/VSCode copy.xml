@@ -8,6 +8,12 @@
   <action id="CppGenerateDefinitions">
     <keyboard-shortcut first-keystroke="alt d" />
   </action>
+  <action id="EditorCloneCaretAbove">
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="EditorCloneCaretBelow">
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="ctrl d" />
   </action>

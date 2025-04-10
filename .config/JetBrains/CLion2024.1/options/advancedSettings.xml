@@ -1,0 +1,12 @@
+<application>
+  <component name="AdvancedSettings">
+    <option name="settings">
+      <map>
+        <entry key="cidr.util.read.env.file.timeout" value="10001" />
+        <entry key="clangd.use.indexer" value="true" />
+        <entry key="clion.use.radler" value="true" />
+        <entry key="confirm.rerun.with.termination" value="false" />
+      </map>
+    </option>
+  </component>
+</application>

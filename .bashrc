@@ -123,3 +123,10 @@ fi
 # https://github.com/atuinsh/atuin
 eval "$(atuin init bash --disable-up-arrow)"
 
+. "$HOME/.atuin/bin/env"
+
+eval "$(starship init bash)"
+
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init bash)"
+

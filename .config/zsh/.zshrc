@@ -137,3 +137,7 @@ fi
 
 # https://github.com/atuinsh/atuin
 eval "$(atuin init zsh --disable-up-arrow)"
+
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+

@@ -10,7 +10,7 @@
 [gui]
 	editor = nano
 [alias]
-	c1 = clone --depth 1
+	c1 = clone --depth 1 --recursive --shallow-submodules
 	lol = log --oneline
 	graph = log --oneline --graph --decorate
 	diffw = diff --word-diff

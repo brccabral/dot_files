@@ -1,0 +1,14 @@
+<application>
+  <component name="FileTypeManager" version="19">
+    <extensionMap>
+      <mapping pattern="matrizDistancias" type="AUTO_DETECTED" />
+      <mapping pattern="Makefile.*" type="Makefile" />
+      <mapping pattern="make.inc.*" type="Makefile" />
+      <mapping pattern="make.inc" type="Makefile" />
+      <mapping ext="wav" type="Native" />
+      <mapping ext="mp3" type="Native" />
+      <mapping ext="tmx" type="XML" />
+      <mapping ext="tsx" type="XML" />
+    </extensionMap>
+  </component>
+</application>

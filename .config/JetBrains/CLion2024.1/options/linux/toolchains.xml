@@ -1,0 +1,9 @@
+<application>
+  <component name="CPPToolchains" version="10">
+    <toolchains detectedVersion="5">
+      <toolchain name="Default" toolSetKind="SYSTEM_UNIX_TOOLSET" customCCompilerPath="gcc-14" customCXXCompilerPath="g++-14" debuggerKind="BUNDLED_GDB" />
+      <toolchain name="Emscripten" toolSetKind="SYSTEM_UNIX_TOOLSET" customCMakePath="emcmakeb" customCCompilerPath="emcc" customCXXCompilerPath="em++" debuggerKind="BUNDLED_GDB" environment="/mnt/Data/CPP_Projects/emsdk_linux/emsdk_env.sh" />
+      <toolchain name="Clang" toolSetKind="SYSTEM_UNIX_TOOLSET" customCCompilerPath="clang" customCXXCompilerPath="clang++" debuggerKind="BUNDLED_GDB" />
+    </toolchains>
+  </component>
+</application>

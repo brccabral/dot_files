@@ -1,0 +1,74 @@
+<application>
+  <component name="BackendCodeEditorApplicationSettings">
+    <option name="/Default/Environment/InlayHints/CppParameterNameHintsOptions2/ExclusionList/=6b1bffff_002Dcd08_002D42cb_002Dbdc0_002Dc625b4cdd472/@EntryIndexedValue" value="std::format" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=INDEX/Order/@EntryValue" value="1" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=MAX/Order/@EntryValue" value="3" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=S/Order/@EntryValue" value="3" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=ST/Order/@EntryValue" value="3" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=STA/Order/@EntryValue" value="3" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=STAR/Order/@EntryValue" value="3" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=START/@KeyIndexDefined" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=START/Order/@EntryValue" value="2" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=T/Order/@EntryValue" value="2" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=TY/Order/@EntryValue" value="2" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=TYP/Order/@EntryValue" value="2" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=TYPE/@KeyIndexDefined" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=TYPE/Expression/@EntryValue" value="suggestVariableType()" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Field/=TYPE/Order/@EntryValue" value="0" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=26AEB2AC3D6873478D13DB545CEB30E6/Text/@EntryValue" value="for ($TYPE$ $INDEX$ = $START$; $INDEX$ &lt; $MAX$; ++$INDEX$)&#10;{&#10;  $SELECTION$$END$&#10;}" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/@KeyIndexDefined" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Applicability/=Live/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Applicability/=Surround/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Description/@EntryValue" value="case break" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Field/=E/Order/@EntryValue" value="0" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Field/=EX/Order/@EntryValue" value="0" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Field/=EXP/Order/@EntryValue" value="0" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Field/=EXPR/@KeyIndexDefined" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Field/=EXPR/Order/@EntryValue" value="0" type="long" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/IsBlessed/@EntryValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Reformat/@EntryValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Scope/=F6696F8185506F41B9C4252540BE9C18/@KeyIndexDefined" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Scope/=F6696F8185506F41B9C4252540BE9C18/Type/@EntryValue" value="InCppFile" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Shortcut/@EntryValue" value="case" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/ShortenQualifiedReferences/@EntryValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=735E64132B90A244BE04ADB20D747D8C/Text/@EntryValue" value="case $EXPR$:&#10;{&#10;    $SELECTION$$END$&#10;    break;&#10;}" type="string" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=9AE4187A10660849A534A4BF86BB61B5/IsBlessed/@EntryValue" value="true" type="bool" />
+    <option name="/Default/PatternsAndTemplates/LiveTemplates/Template/=F51E70F3E61CF14CBE0DE94FED26AD09/IsBlessed/@EntryValue" value="true" type="bool" />
+  </component>
+  <component name="CodeFoldingSettings">
+    <option name="COLLAPSE_IMPORTS" value="false" />
+  </component>
+  <component name="CodeInsightSettings">
+    <option name="completionCaseSensitive" value="2" />
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <option name="COMPLETION_CASE_SENSITIVE" value="2" />
+  </component>
+  <component name="DaemonCodeAnalyzerSettings">
+    <option name="NEXT_ERROR_ACTION_GOES_TO_ERRORS_FIRST" value="false" />
+  </component>
+  <component name="DeclarativeInlayHintsSettings">
+    <option name="providerIdToEnabled">
+      <map>
+        <entry key="js.chain.hints" value="true" />
+        <entry key="js.type.hints" value="true" />
+        <entry key="ts.chain.hints" value="true" />
+        <entry key="ts.enum.hints" value="true" />
+        <entry key="ts.type.hints" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="EditorSettings">
+    <option name="USE_SOFT_WRAPS" value="" />
+  </component>
+  <component name="InlayHintsSettings">
+    <option name="lastViewedProviderKeyId" value="" />
+  </component>
+  <component name="InlineCompletionOnboarding">
+    <option name="onboardingFinished" value="true" />
+  </component>
+  <component name="TodoConfiguration">
+    <pattern pattern="\bNotImplementedException\b" />
+    <pattern case-sensitive="true" pattern="(?&lt;=\W|^)(?&lt;TAG&gt;BUG:)(\W|$)(.*)" />
+    <pattern pattern="(?&lt;=\W|^)(?&lt;TAG&gt;TODO)(\W|$)(.*)" />
+  </component>
+</application>

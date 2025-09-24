@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Variables that other applications need
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -98,3 +100,29 @@ export QT_PLUGIN_PATH=/usr/local/lib/x86_64-linux-gnu/plugins
 if [[ $XDG_SESSION_TYPE == *"wayland"* ]]; then
     export XCURSOR_SIZE=24
 fi
+
+export QT_QPA_PLATFORMTHEME=
+export QT_QPA_PLATFORM=
+if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
+    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_QPA_PLATFORM="wayland;xcb"
+fi
+
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+export ANDROID_NDK=/mnt/Data/Android/android-ndk-r27
+
+# symlink enables cache from different partition
+export UV_CACHE_DIR=/opt/uv/cache
+export UV_LINK_MODE=symlink
+
+export OLLAMA_HOST=http://0.0.0.0:11434
+export OLLAMA_MODELS=/mnt/HDExtra/ollama/.ollama/models
+
+# enforce RADV vulkan implementation
+export AMD_VULKAN_ICD=RADV
+
+# increase AMD and Intel cache size to 12GB
+export MESA_SHADER_CACHE_MAX_SIZE=12G
+
+export __GL_SHADER_DISK_CACHE_SIZE=12000000000

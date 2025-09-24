@@ -1,3 +1,5 @@
+# Variables for terminal shells
+
 export EDITOR=nano
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
@@ -14,31 +16,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-export QT_QPA_PLATFORMTHEME=
-export QT_QPA_PLATFORM=
-if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
-    export QT_QPA_PLATFORMTHEME=qt5ct
-    export QT_QPA_PLATFORM="wayland;xcb"
-fi
-
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
 # see https://stackoverflow.com/questions/73908737/permission-denied-when-running-go-from-makefile
 # source "/mnt/Data/CPP_Projects/emsdk_linux/emsdk_env.sh" 2>/dev/null 1>/dev/null
 
 # dummy value - not today hacker, not today...
 export DEBGET_TOKEN=github_abc123
 export DEBGET_CACHE_RTN=1
-
-# export RAYLIB_SRC_PATH=/mnt/HDExtra/GithubProjects/raylib_emscripten/src
-# export RAYLIB_INSTALL_PATH=/mnt/HDExtra/GithubProjects/raylib_emscripten/install_dir
-
-export ANDROID_NDK=/mnt/Data/Android/android-ndk-r27
-
-# symlink enables cache from different partition
-export UV_CACHE_DIR=/opt/uv/cache
-export UV_LINK_MODE=symlink
-
-export OLLAMA_HOST=http://0.0.0.0:11434
-export OLLAMA_MODELS=/mnt/HDExtra/ollama/.ollama/models
-

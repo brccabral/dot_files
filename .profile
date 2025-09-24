@@ -105,6 +105,7 @@ export QT_QPA_PLATFORMTHEME=
 export QT_QPA_PLATFORM=
 if [[ $XDG_SESSION_TYPE == *"wayland"* ]] ; then
     export QT_QPA_PLATFORMTHEME=qt5ct
+    # export QT_QPA_PLATFORM="wayland"
     export QT_QPA_PLATFORM="wayland;xcb"
 fi
 
@@ -126,3 +127,16 @@ export AMD_VULKAN_ICD=RADV
 export MESA_SHADER_CACHE_MAX_SIZE=12G
 
 export __GL_SHADER_DISK_CACHE_SIZE=12000000000
+
+export EMSDK=/mnt/Data/CPP_Projects/emsdk_linux
+# see https://stackoverflow.com/questions/73908737/permission-denied-when-running-go-from-makefile
+# source $EMSDK/emsdk_env.sh 2>/dev/null 1>/dev/null
+
+export NVM_DIR="/mnt/HDExtra/bin/nodejs/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PERF_BUILDID_DIR=/mnt/HDExtra/tmp/perf-debug
+
+export PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1
+export PKG_CONFIG_ALLOW_SYSTEM_LIBS=1

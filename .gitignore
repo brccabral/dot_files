@@ -2,3 +2,7 @@ build-*/
 cmake-build-*/
 .vscode/
 .idea/
+__pycache__/
+venv/
+.venv/
+.env

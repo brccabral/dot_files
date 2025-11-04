@@ -30,6 +30,7 @@ I don't know what are all the options, but these are some that I've seen.
 - DBusActivatable: don't know, `true` or `false`.
 - Encoding: don't know, example `UTF-8`.
 - Exec: the command to execute. In some cases we may need to invoke `env` first. The command must be in your `$PATH` (it can be a symlink). It is not just the executable, we can pass params too `myprogram --option=value1`. Pass `%f` if in a file context.
+  - Some applications (ie _Blender_) need permissions from `$HOME`, but _.desktop_ files open from `/`, so, exec with `Exec=sh -c 'cd ~ && blender %f'`
 - GenericName: not the name that shows-up, but you can use as search.
 - Hidden: don't know, `true` or `false`.
 - Icon: the icon that will show-up. Place your icon at `$HOME$/.local/share/icons` or `/usr/share/icons` and you can reference it by name. Or, put the full path to the icon file. Some applications depend on `StartupWMClass` to show the icon in the task bar. Read below.

@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Tar Extraction
+Comment=Extract tar files
+Exec=bash -c 'mkdir -p "%P/%e" & tar -xf "%F" --directory "%P/%e"'
+Selection=s
+Extensions=gz;tar;xz;
+Icon-Name=package-x-generic
+Dependencies=tar;

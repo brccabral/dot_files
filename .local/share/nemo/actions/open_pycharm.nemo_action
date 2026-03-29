@@ -1,0 +1,11 @@
+[Nemo Action]
+
+Active=true
+Name=Open PyCharm
+Comment=Open PyCharm in this folder
+Exec=pycharm ""%P""
+Selection=none
+Extensions=dir;
+Icon-Name=pycharm
+Dependencies=pycharm;
+

@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Zip Extraction
+Comment=Extract zip files
+Exec=bash -c 'mkdir -p "%P/%e" & unzip "%F" -d "%P/%e"'
+Selection=s
+Extensions=zip;
+Icon-Name=package-x-generic
+Dependencies=unzip;

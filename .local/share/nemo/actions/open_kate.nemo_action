@@ -1,0 +1,10 @@
+[Nemo Action]
+
+Active=true
+Name=Open Kate
+Comment=Open Kate in this folder
+Exec=kate "%P"
+Selection=none
+Extensions=dir;
+Icon-Name=kate
+Dependencies=kate;

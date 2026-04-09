@@ -24,6 +24,8 @@
 	excludesfile = ~/.gitignore
 [http]
 	cookiefile = ~/.gitcookies
+# [http "ssh://git@gitlab.some.server.local:22/"]
+#	sslCAInfo = C:\\Users\\username\\.gitcerts.pem
 [grep]
 	lineNumber = true
 	patternType = perl

@@ -150,3 +150,11 @@ function find_text_in_files() {
 function uv_update() {
     uv tool list | grep ' v' | awk '{print $1}' | xargs uv tool update
 }
+
+function dotnet_addconsole() {
+    if [ -z "${1}" ]; then
+        return 1
+    fi
+    dotnet new console -o "$1"
+    dotnet sln add "$1/$1.csproj"
+}

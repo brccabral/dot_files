@@ -1,8 +1,12 @@
 build-*/
+build_*/
 cmake-build-*/
 .vscode/
+.vs/
 .idea/
+.kdev4/
 __pycache__/
 venv/
 .venv/
 .env
+.flatpak-builder/
